@@ -1,40 +1,33 @@
 # Prompts de las 8 imágenes
 
-Estos prompts están escritos para que las imágenes salgan con **la misma paleta y el mismo lenguaje visual que la página**. Si se generan con otro estilo, van a chocar contra el diseño.
+> **Las 8 imágenes ya están generadas y cargadas** en la carpeta `img/`. Este archivo queda como referencia por si hay que rehacer alguna o mantener el estilo en los ejes 2 y 3.
 
-> **Ojo:** la página tiene **fondo oscuro**. Las imágenes tienen que salir con fondo oscuro también. Si salen con fondo blanco van a quedar como ocho rectángulos encandilando en el medio de la página.
+## Si tenés que rehacer una
 
-## Antes de empezar
-
-1. **Generá las 8 en el mismo chat, una atrás de otra.** Así el modelo mantiene la línea. Si abrís un chat nuevo para cada una, van a salir distintas entre sí.
-2. **Copiá el bloque de estilo completo** (el de abajo) al principio de cada prompt. Sí, las ocho veces.
-3. Si una sale con fondo blanco o con colores de más (violeta, celeste, verde, naranja), pedile: *"rehacela con fondo negro #0B0D12 y usando únicamente blanco hueso #EDEFF4, azul #2D3BFF y amarillo #EBFF00"*.
-4. Guardalas en `img/` con el nombre que dice cada una.
+1. Usá el bloque de estilo de abajo al principio del prompt, para que la imagen nueva combine con las siete que ya están.
+2. Guardala en `img/` **con el mismo nombre** que la que reemplaza y listo, no hay que tocar el código.
+3. Si necesitás varias de una, generalas todas en el mismo chat, una atrás de otra: si abrís un chat nuevo para cada una salen distintas entre sí.
 
 ---
 
-## Bloque de estilo (va al principio de los 8 prompts)
+## Bloque de estilo
+
+La página tiene **fondo azul marino oscuro** con acentos en azul y violeta. Las imágenes tienen que salir en ese mismo mundo.
 
 ```
 ESTILO OBLIGATORIO:
-Ilustración vectorial plana, estilo póster suizo / diseño gráfico internacional,
-en versión nocturna sobre fondo oscuro.
-Paleta estricta de 4 colores únicamente: fondo casi negro #0B0D12,
-blanco hueso #EDEFF4 para las formas y líneas, azul eléctrico #2D3BFF
-y amarillo ácido #EBFF00. Ningún otro color.
-El fondo debe ocupar toda la imagen, de borde a borde, sin marcos ni viñetas.
-Colores planos y sólidos.
-PROHIBIDO: fondo blanco o claro, degradados, sombras, brillos, resplandores,
-texturas, efectos 3D, perspectiva isométrica, reflejos, personas realistas,
-iconos de stock, estética neón o de videojuego.
-Formas geométricas duras y simples: rectángulos, cuadrados, círculos y líneas rectas.
-Cada computadora o nodo se representa como un rectángulo o cuadrado simple, no como
-un dibujo detallado de un monitor.
-Las conexiones son líneas rectas, preferentemente en ángulo recto (horizontal y
-vertical), como un diagrama de circuito o un esquema técnico.
-Grosor de línea uniforme y fino.
-Sin texto dentro de la imagen, o como máximo una o dos palabras en mayúsculas.
-Composición horizontal 16:9, alineada a una grilla, con mucho espacio vacío.
+Ilustración técnica sobre fondo oscuro, estilo diagrama de red luminoso.
+Fondo azul marino muy oscuro, casi negro (#070B14).
+Las formas se dibujan con líneas finas luminosas en azul eléctrico (#5B8CFF)
+y violeta (#A472FF), con un resplandor suave.
+Las computadoras se representan como monitores simples de contorno fino, no
+como dibujos detallados ni fotorrealistas.
+Las conexiones son líneas o líneas punteadas con pequeños puntos de luz.
+PROHIBIDO: fondo blanco o claro, fotografías, personas realistas, iconos de
+stock, colores fuera de la gama azul-violeta (nada de rojo, verde, naranja
+ni amarillo salvo un detalle mínimo).
+Composición horizontal 16:9, ordenada, con bastante espacio vacío alrededor.
+Poco texto o directamente sin texto.
 ```
 
 ---

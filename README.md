@@ -2,85 +2,87 @@
 
 Página web del **Eje Temático 1 — Fundamentos de los Sistemas Operativos Distribuidos**.
 
+**Verla online:** https://facundosalaa.github.io/tp1-sistemas-distribuidos/
+
 Es un solo archivo (`index.html`) con todo adentro: HTML, estilos y JavaScript. No hay que instalar nada ni compilar nada.
 
 ---
 
-## Cómo cargar el material
+## Estado del material
 
-Todo se configura en un solo lugar. Abrí `index.html`, buscá el bloque `const CONFIG = {` (está casi al final, dentro del `<script>`) y completá lo que tengas. **No hace falta tocar nada más.**
+| | Estado |
+|---|---|
+| Podcast introductorio (1:49) | Cargado |
+| Video general (6:43, en 3 partes) | Cargado |
+| 8 imágenes del eje | Cargadas |
+| Nombres de las integrantes | **Falta** |
+
+Lo único pendiente es completar los nombres. Están en `index.html`, en `CONFIG.integrantes`.
+
+---
+
+## Cómo se edita
+
+Todo se configura en un solo lugar. Abrí `index.html`, buscá el bloque `const CONFIG = {` (está casi al final, dentro del `<script>`) y cambiá lo que necesites. **No hace falta tocar nada más.**
 
 ```js
 const CONFIG = {
   integrantes: ["Nombre 1", "Nombre 2", "Nombre 3"],
 
   podcast: {
-    src: "audio/podcast.mp3",
-    duracion: "2 min"
+    src: "audio/podcast.m4a",
+    duracion: "1:49"
   },
 
   video: {
-    url: "https://youtu.be/XXXXXXXXXXX",
-    duracion: "5 min"
+    duracion: "6:43 · 3 partes",
+    partes: [
+      { titulo: "Parte 1", src: "video/parte-1.mp4", duracion: "3:37" },
+      { titulo: "Parte 2", src: "video/parte-2.mp4", duracion: "1:46" },
+      { titulo: "Parte 3", src: "video/parte-3.mp4", duracion: "1:20" }
+    ]
   },
 
   imagenes: {
-    mapaMental: "img/mapa-mental.png",
-    tema1:      "img/tema1.png",
-    tema2:      "img/tema2.png",
-    tema3:      "img/tema3.png",
-    tema4:      "img/tema4.png",
-    tema5:      "img/tema5.png",
-    tema6:      "img/tema6.png",
-    cierre:     "img/cierre.png"
+    mapaMental: "img/mapa-mental.jpeg",
+    tema1:      "img/tema1.jpeg",
+    ...
   }
 };
 ```
 
-Lo que dejes vacío (`""`) no rompe nada: muestra un recuadro que dice qué va en ese lugar.
+Si dejás un campo vacío (`""`) no se rompe nada: muestra un recuadro que dice qué va en ese lugar.
 
-### Imágenes
+### Reemplazar una imagen
 
-Van en la carpeta `img/`. Con estos nombres exactos:
+Pisá el archivo en `img/` con el mismo nombre y listo. Si le cambiás la extensión, actualizá también la ruta en `CONFIG.imagenes`.
 
 | Archivo | Dónde aparece |
 |---|---|
-| `mapa-mental.png` | Portada |
-| `tema1.png` | Tema 01 · Introducción a los SOD |
-| `tema2.png` | Tema 02 · Modelos y Arquitecturas |
-| `tema3.png` | Tema 03 · Redes de Interconexión |
-| `tema4.png` | Tema 04 · Cliente-Servidor y P2P |
-| `tema5.png` | Tema 05 · Características de Diseño |
-| `tema6.png` | Tema 06 · Funciones y Servicios |
-| `cierre.png` | Sección final |
+| `mapa-mental.jpeg` | Portada |
+| `tema1.jpeg` | Tema 01 · Introducción a los SOD |
+| `tema2.jpeg` | Tema 02 · Modelos y Arquitecturas |
+| `tema3.jpeg` | Tema 03 · Redes de Interconexión |
+| `tema4.jpeg` | Tema 04 · Cliente-Servidor y P2P |
+| `tema5.jpeg` | Tema 05 · Características de Diseño |
+| `tema6.jpeg` | Tema 06 · Funciones y Servicios |
+| `cierre.jpeg` | Sección final |
 
-Formato horizontal (16:9 va perfecto). Si pesan más de 2 MB, pasalas por [squoosh.app](https://squoosh.app) antes de subirlas.
+Los prompts con los que se generaron están en [PROMPTS.md](PROMPTS.md), por si hay que rehacer alguna.
 
-### Podcast
+### El video
 
-Va en `audio/podcast.mp3`. Si tiene otro nombre, cambiá `CONFIG.podcast.src`.
+Están los tres archivos en `video/`. La página muestra un selector de partes y, cuando termina una, arranca la siguiente sola.
 
-### Video
-
-**No lo subas al repo**, pesa demasiado. Subilo a YouTube como *no listado* y pegá el link en `CONFIG.video.url`. Acepta cualquiera de estos formatos y los convierte solo:
-
-- `https://www.youtube.com/watch?v=XXXXXXXXXXX`
-- `https://youtu.be/XXXXXXXXXXX`
-- `https://drive.google.com/file/d/ID/view`
-
----
-
-## Cómo se ve
-
-La página se publica sola con GitHub Pages cada vez que se hace un push a `main`.
+Si en algún momento preferís pasarlos a YouTube: subilos como *no listados*, vaciá `CONFIG.video.partes` y pegá el link en `CONFIG.video.url`. Acepta formato `youtube.com/watch?v=…`, `youtu.be/…` o un archivo de Drive.
 
 ---
 
 ## Cómo ponerla en Google Sites
 
-En Google Sites: **Insertar → Insertar código → Por URL**, y pegás la dirección de GitHub Pages.
+**Insertar → Insertar código → Por URL**, y pegás la dirección de GitHub Pages.
 
-Importante: usar la opción **por URL** y no pegar el código a mano. Las imágenes y el audio están referenciados con rutas relativas (`img/…`, `audio/…`), y esas rutas sólo funcionan si la página se sirve desde su propia dirección.
+Importante: usar la opción **por URL** y no pegar el código a mano. Las imágenes, el audio y los videos están referenciados con rutas relativas (`img/…`, `audio/…`, `video/…`), y esas rutas sólo funcionan si la página se sirve desde su propia dirección.
 
 ---
 
@@ -89,13 +91,17 @@ Importante: usar la opción **por URL** y no pegar el código a mano. Las imáge
 | Archivo | Qué es |
 |---|---|
 | `index.html` | La página. Es lo único que importa. |
-| `img/` | Las imágenes del eje. |
+| `img/` | Las 8 imágenes del eje. |
 | `audio/` | El podcast. |
+| `video/` | Las tres partes del video. |
+| `PROMPTS.md` | Los prompts con los que se generaron las imágenes. |
 | `README.md` | Esto. |
+
+La página se republica sola con GitHub Pages cada vez que se hace un push a `main`.
 
 ---
 
-## Contenido de la página
+## Contenido
 
 - **Portada** — podcast, mapa mental y video general
 - **Tema 01** — Introducción a los SOD: definición, SOR vs SOD, conceptos básicos, evolución histórica

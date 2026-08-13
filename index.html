@@ -3,126 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TP1 · Sistemas Operativos Distribuidos · Eje Temático 1</title>
+<title>TP1 — Sistemas Operativos Distribuidos · Eje Temático 1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* ===============================================================
-   TP1 · SISTEMAS OPERATIVOS DISTRIBUIDOS · EJE TEMATICO 1
-   Pagina autocontenida. Compatible con Google Sites.
-   Direccion visual: tipografia suiza, color plano, grilla dura.
-   =============================================================== */
+/* ═══════════════════════════════════════════════════════════════
+   TP1 — Sistemas Operativos Distribuidos · Eje Temático 1
+   Página educativa autocontenida. Compatible con Google Sites.
+   ═══════════════════════════════════════════════════════════════ */
 
 :root{
-  /* Fondos */
-  --bg:         #0B0D12;
-  --bg-2:       #11141C;
-  --surface:    #151922;
-  --nav:        #07090D;
-  --invert-bg:  #F2F2ED;
-  --invert-bg-2:#E4E4DC;
-  --invert-rule:#C9C9BF;
+  /* --- Fondos --- */
+  --ground:      #070B14;
+  --ground-2:    #0A1020;
+  --surface:     #101827;
+  --surface-2:   #16203358;
+  --surface-hi:  #162036;
 
-  /* Tinta */
-  --ink:        #EDEFF4;
-  --ink-2:      #A3AAB8;
-  --ink-3:      #6C7484;
-  --ink-inv:    #0A0A0A;
-  --ink-inv-2:  #45453F;
+  /* --- Líneas --- */
+  --line:        #1E2A44;
+  --line-hi:     #2E3D60;
 
-  /* Reglas */
-  --rule:       #39414F;
-  --rule-soft:  #232936;
+  /* --- Tinta (grises con sesgo azul, no gris puro) --- */
+  --ink:         #E9EEF9;
+  --ink-2:       #9AA7C2;
+  --ink-3:       #647190;
 
-  /* Color plano. Sin degrades en toda la pagina. */
-  --blue:       #2D3BFF;
-  --blue-deep:  #1F2ACC;
-  --blue-tint:  #B9BEFF;
-  --blue-line:  #5560FF;
-  --acid:       #EBFF00;
+  /* --- Acentos --- */
+  --accent:      #5B8CFF;
+  --accent-soft: #5B8CFF1F;
+  --accent-2:    #A472FF;
+  --signal:      #3DDC97;
+  --warn:        #FFB454;
 
-  /* Tipografia */
-  --display: 'Anton', 'Arial Narrow', Impact, 'Haettenschweiler', sans-serif;
-  --text:    'Archivo', system-ui, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --mono:    'IBM Plex Mono', ui-monospace, Consolas, 'Courier New', monospace;
+  /* --- Forma --- */
+  --r-card:  6px;
+  --r-sm:    3px;
+  --r-pill:  999px;
 
-  /* Medidas */
-  --wrap:  1240px;
-  --prose: 66ch;
-  --bar:   58px;
+  /* --- Tipografía --- */
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, 'Courier New', monospace;
+
+  /* --- Medidas --- */
+  --wrap: 1120px;
+  --prose: 68ch;
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
 
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:calc(var(--bar) + 8px);
-  -webkit-text-size-adjust:100%;
-}
+html{ scroll-behavior:smooth; scroll-padding-top:88px; -webkit-text-size-adjust:100%; }
 
 body{
   margin:0;
-  background:var(--bg);
+  background:var(--ground);
   color:var(--ink);
-  font-family:var(--text);
-  font-size:16.5px;
-  line-height:1.62;
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.7;
   -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
   overflow-x:hidden;
 }
 
 img{ max-width:100%; display:block; }
 
-::selection{ background:var(--acid); color:var(--ink-inv); }
+::selection{ background:var(--accent); color:#04070F; }
 
-:focus-visible{ outline:3px solid var(--blue); outline-offset:2px; }
+:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:var(--r-sm);
+}
 
-/* --- Tipografia ------------------------------------------------ */
+/* ── Tipografía base ─────────────────────────────────────────── */
 
-h1,h2,h3,h4{ margin:0; }
+h1,h2,h3,h4{ margin:0; text-wrap:balance; }
 
 .display{
-  font-family:var(--display);
-  font-weight:400;
-  font-size:clamp(3.1rem, 11.5vw, 9.5rem);
-  line-height:0.84;
-  letter-spacing:-0.015em;
-  text-transform:uppercase;
+  font-size:clamp(2.35rem, 6.2vw, 4.5rem);
+  font-weight:800;
+  letter-spacing:-0.045em;
+  line-height:0.98;
 }
 
 .h2{
-  font-family:var(--display);
-  font-weight:400;
-  font-size:clamp(1.95rem, 5vw, 3.6rem);
-  line-height:0.92;
-  letter-spacing:-0.008em;
-  text-transform:uppercase;
-  text-wrap:balance;
+  font-size:clamp(1.65rem, 3.6vw, 2.5rem);
+  font-weight:700;
+  letter-spacing:-0.032em;
+  line-height:1.1;
 }
 
 .h3{
-  font-family:var(--text);
-  font-size:1.02rem;
-  font-weight:700;
-  line-height:1.28;
-  letter-spacing:-0.005em;
+  font-size:1.05rem;
+  font-weight:650;
+  letter-spacing:-0.012em;
+  line-height:1.35;
+  color:var(--ink);
 }
 
 .mono{
   font-family:var(--mono);
-  font-size:0.71rem;
+  font-size:0.72rem;
   font-weight:500;
-  letter-spacing:0.13em;
+  letter-spacing:0.15em;
   text-transform:uppercase;
 }
 
 .lead{
-  font-size:clamp(1.08rem, 1.9vw, 1.26rem);
-  line-height:1.55;
-  font-weight:500;
-  color:var(--ink);
-  max-width:58ch;
+  font-size:1.09rem;
+  line-height:1.72;
+  color:var(--ink-2);
+  max-width:var(--prose);
   margin:0;
 }
 
@@ -130,457 +123,459 @@ p{ margin:0 0 1em; color:var(--ink-2); max-width:var(--prose); }
 p:last-child{ margin-bottom:0; }
 
 strong{ color:var(--ink); font-weight:600; }
-em{ font-style:italic; }
 
-a{ color:var(--blue); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1.5px; }
-a:hover{ background:var(--acid); color:var(--ink); text-decoration:none; }
+a{ color:var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; text-underline-offset:3px; }
 
-/* --- Contenedores ---------------------------------------------- */
+/* ── Contenedores ────────────────────────────────────────────── */
 
 .wrap{
   width:100%;
   max-width:var(--wrap);
   margin-inline:auto;
-  padding-inline:clamp(18px, 4.5vw, 44px);
+  padding-inline:clamp(18px, 5vw, 40px);
 }
 
-/* ===============================================================
-   PORTADA
-   =============================================================== */
+/* ═══ HERO ═══════════════════════════════════════════════════ */
 
 .hero{
   position:relative;
-  padding-block:clamp(40px, 7vw, 78px) clamp(34px, 5vw, 54px);
-  border-bottom:3px solid var(--rule);
+  isolation:isolate;
+  padding-block:clamp(64px, 11vw, 120px) clamp(48px, 8vw, 88px);
+  border-bottom:1px solid var(--line);
   overflow:hidden;
 }
 
-/* Grilla vertical visible: el andamio del diseno, a la vista. */
+#net{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  opacity:0.85;
+  -webkit-mask-image:radial-gradient(120% 90% at 72% 40%, #000 12%, transparent 78%);
+  mask-image:radial-gradient(120% 90% at 72% 40%, #000 12%, transparent 78%);
+}
+
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  z-index:0;
-  background-image:repeating-linear-gradient(90deg, var(--rule-soft) 0 1px, transparent 1px calc(100% / 12));
-  background-size:100% 100%;
-  opacity:0.55;
-  pointer-events:none;
+  z-index:-2;
+  background:
+    radial-gradient(80% 60% at 78% 22%, #5B8CFF14, transparent 62%),
+    radial-gradient(60% 50% at 8% 88%, #A472FF10, transparent 60%),
+    linear-gradient(180deg, var(--ground-2), var(--ground));
 }
-.hero > *{ position:relative; z-index:1; }
 
-.hero-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:20px;
-  flex-wrap:wrap;
-  padding-bottom:16px;
-  border-bottom:1.5px solid var(--rule);
-  margin-bottom:clamp(22px, 4vw, 40px);
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:64px 64px;
+  opacity:0.30;
+  -webkit-mask-image:radial-gradient(90% 70% at 30% 30%, #000, transparent 72%);
+  mask-image:radial-gradient(90% 70% at 30% 30%, #000, transparent 72%);
 }
-.hero-top .mono{ color:var(--ink); }
-.hero-top .mono b{ font-weight:600; }
 
-.display .ln{ display:block; }
-.display .blue{ color:var(--blue); }
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--accent);
+  margin-bottom:26px;
+}
+.eyebrow::before{
+  content:"";
+  width:26px;
+  height:1px;
+  background:currentColor;
+}
+
+.hero .display{ max-width:16ch; }
+
+.hero .display em{
+  font-style:normal;
+  background:linear-gradient(96deg, var(--accent) 8%, var(--accent-2) 92%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
 
 .hero-sub{
-  margin:clamp(20px, 3vw, 32px) 0 0;
-  font-family:var(--text);
-  font-size:clamp(1rem, 2.2vw, 1.45rem);
-  font-weight:600;
-  letter-spacing:-0.015em;
-  line-height:1.2;
-  max-width:34ch;
+  margin:22px 0 0;
+  font-size:clamp(1rem, 2.1vw, 1.2rem);
+  font-weight:500;
+  color:var(--ink-2);
+  letter-spacing:-0.01em;
+  max-width:44ch;
 }
 
-/* Cita: bloque negro, texto invertido */
+/* Cita fundacional */
 .thesis{
-  margin:clamp(26px, 4vw, 40px) 0 0;
-  background:var(--blue);
-  color:var(--ink);
-  padding:clamp(22px, 3.5vw, 34px) clamp(20px, 3.5vw, 36px);
-  max-width:62ch;
+  margin-top:38px;
+  padding-left:22px;
+  border-left:2px solid var(--accent);
+  max-width:56ch;
 }
 .thesis q{
   display:block;
-  font-family:var(--text);
-  font-size:clamp(1.05rem, 2.1vw, 1.42rem);
-  font-weight:500;
-  line-height:1.34;
+  font-size:clamp(1.02rem, 2.2vw, 1.24rem);
+  line-height:1.55;
+  font-weight:400;
+  color:var(--ink);
   letter-spacing:-0.015em;
-  quotes:"\201C" "\201D";
+  quotes:"«" "»";
 }
 .thesis cite{
   display:block;
-  margin-top:16px;
+  margin-top:12px;
   font-family:var(--mono);
   font-size:0.7rem;
   font-style:normal;
-  font-weight:500;
-  letter-spacing:0.16em;
+  letter-spacing:0.13em;
   text-transform:uppercase;
-  color:var(--acid);
+  color:var(--ink-3);
 }
 
+/* Chips de metadatos */
 .meta-row{
   display:flex;
   flex-wrap:wrap;
-  gap:0;
-  margin-top:clamp(24px, 3.5vw, 36px);
-  border-top:1.5px solid var(--rule);
-  border-left:1.5px solid var(--rule);
+  gap:8px;
+  margin-top:38px;
 }
-.meta-row .cell{
-  flex:1 1 150px;
-  border-right:1.5px solid var(--rule);
-  border-bottom:1.5px solid var(--rule);
-  padding:12px 14px;
+.chip{
   font-family:var(--mono);
   font-size:0.68rem;
   letter-spacing:0.1em;
   text-transform:uppercase;
-  color:var(--ink-3);
-  line-height:1.5;
-}
-.meta-row .cell b{
-  display:block;
-  font-family:var(--text);
-  font-size:1.02rem;
-  font-weight:700;
-  letter-spacing:-0.01em;
-  text-transform:none;
-  color:var(--ink);
-  margin-top:3px;
-}
-
-/* ===============================================================
-   ESQUEMATICO EN VIVO
-   No es decoracion: es el concepto de la materia funcionando.
-   =============================================================== */
-
-.schematic{
-  border:3px solid var(--rule);
-  border-top:none;
-  background:var(--bg);
-}
-.schematic-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
-  padding:11px clamp(14px, 2.5vw, 22px);
-  border-bottom:1.5px solid var(--rule);
-  background:var(--blue);
-  color:var(--bg);
-  font-family:var(--mono);
-  font-size:0.68rem;
-  font-weight:600;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-}
-.schematic-canvas{
-  position:relative;
-  width:100%;
-  height:clamp(190px, 26vw, 280px);
-}
-.schematic-canvas canvas{ position:absolute; inset:0; width:100%; height:100%; }
-.schematic-foot{
-  padding:10px clamp(14px, 2.5vw, 22px);
-  border-top:1.5px solid var(--rule);
-  font-family:var(--mono);
-  font-size:0.7rem;
-  letter-spacing:0.05em;
   color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-pill);
+  padding:6px 14px;
+  white-space:nowrap;
+}
+.chip b{ color:var(--ink); font-weight:600; }
+
+/* Lectura de estado del grafo del hero */
+.netstat{
+  margin-top:30px;
+  font-family:var(--mono);
+  font-size:0.72rem;
+  letter-spacing:0.06em;
+  color:var(--ink-3);
   display:flex;
   align-items:center;
-  gap:10px;
-  min-height:40px;
+  gap:9px;
+  min-height:20px;
 }
-.schematic-foot .flag{
-  width:10px; height:10px;
-  background:var(--blue);
+.netstat .dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--signal);
+  box-shadow:0 0 0 3px #3DDC9722;
   flex:none;
 }
-.schematic-foot.is-down .flag{ background:var(--acid); border:1.5px solid var(--ink); }
+.netstat.is-down .dot{ background:var(--warn); box-shadow:0 0 0 3px #FFB45422; }
 
-/* ===============================================================
-   NAVEGACION
-   =============================================================== */
+/* ═══ NAVEGACIÓN ═════════════════════════════════════════════ */
 
 .navbar{
   position:sticky;
   top:0;
-  z-index:60;
-  background:var(--nav);
-  border-bottom:3px solid var(--rule);
+  z-index:50;
+  background:#070B14EB;
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
 }
+
 .navbar-inner{
   display:flex;
-  align-items:stretch;
-  gap:0;
-  min-height:var(--bar);
+  align-items:center;
+  gap:18px;
+  height:62px;
 }
 
 .brand{
   display:flex;
   align-items:center;
   gap:9px;
-  padding-right:18px;
-  margin-right:18px;
-  border-right:1.5px solid var(--rule);
   font-family:var(--mono);
   font-size:0.72rem;
-  font-weight:600;
-  letter-spacing:0.14em;
+  font-weight:700;
+  letter-spacing:0.13em;
   color:var(--ink);
+  flex:none;
   text-decoration:none;
-  flex:none;
 }
-.brand:hover{ background:transparent; color:var(--acid); text-decoration:none; }
-.brand i{
-  width:11px; height:11px;
-  background:var(--acid);
-  display:block;
+.brand:hover{ text-decoration:none; color:var(--accent); }
+.brand-mark{
+  width:9px;
+  height:9px;
+  border:1.5px solid var(--accent);
+  border-radius:50%;
   flex:none;
+  position:relative;
+}
+.brand-mark::after{
+  content:"";
+  position:absolute;
+  inset:2px;
+  border-radius:50%;
+  background:var(--accent);
 }
 
 .navlinks{
   display:flex;
-  align-items:stretch;
-  gap:0;
+  gap:6px;
   overflow-x:auto;
   scrollbar-width:none;
   -ms-overflow-style:none;
   margin-left:auto;
+  padding:4px 0;
 }
 .navlinks::-webkit-scrollbar{ display:none; }
 
 .navlinks a{
   flex:none;
-  display:flex;
+  display:inline-flex;
   align-items:center;
-  gap:8px;
-  padding:0 15px;
-  font-family:var(--mono);
-  font-size:0.69rem;
+  gap:7px;
+  padding:7px 13px;
+  border-radius:var(--r-pill);
+  border:1px solid transparent;
+  font-size:0.82rem;
   font-weight:500;
-  letter-spacing:0.09em;
-  text-transform:uppercase;
+  letter-spacing:-0.005em;
   color:var(--ink-2);
-  text-decoration:none;
   white-space:nowrap;
-  transition:background .12s linear, color .12s linear;
+  transition:color .2s, background .2s, border-color .2s;
 }
-.navlinks a .n{ font-weight:600; color:var(--ink-3); transition:color .12s linear; }
-.navlinks a:hover{ background:var(--surface); color:var(--ink); text-decoration:none; }
-.navlinks a:hover .n{ color:var(--acid); }
-.navlinks a.active{ background:var(--blue); color:var(--ink); }
-.navlinks a.active .n{ color:var(--acid); }
+.navlinks a .n{
+  font-family:var(--mono);
+  font-size:0.66rem;
+  font-weight:700;
+  color:var(--ink-3);
+  transition:color .2s;
+}
+.navlinks a:hover{
+  color:var(--ink);
+  background:var(--surface);
+  border-color:var(--line);
+  text-decoration:none;
+}
+.navlinks a.active{
+  color:var(--ink);
+  background:var(--accent-soft);
+  border-color:#5B8CFF4D;
+}
+.navlinks a.active .n{ color:var(--accent); }
 
+/* Barra de progreso de lectura */
 .progress{
   position:absolute;
   left:0;
-  bottom:-3px;
-  height:3px;
+  bottom:-1px;
+  height:2px;
   width:100%;
-  background:var(--acid);
+  background:linear-gradient(90deg, var(--accent), var(--accent-2));
   transform:scaleX(0);
   transform-origin:left center;
-  transition:transform .1s linear;
+  transition:transform .12s linear;
   will-change:transform;
 }
 
-/* ===============================================================
-   SECCIONES
-   =============================================================== */
+/* ═══ SECCIONES ══════════════════════════════════════════════ */
 
 .section{
-  border-bottom:3px solid var(--rule);
-  scroll-margin-top:var(--bar);
+  padding-block:clamp(62px, 9vw, 104px);
+  border-bottom:1px solid var(--line);
+  scroll-margin-top:76px;
 }
-.section > .wrap{ padding-block:clamp(46px, 6.5vw, 84px); }
-.section > .wrap + .band + .wrap{ padding-top:0; }
-.section.alt{ background:var(--bg-2); }
+.section:last-of-type{ border-bottom:none; }
 
 .section-head{
-  display:grid;
-  grid-template-columns:auto 1fr;
-  gap:clamp(16px, 3vw, 34px);
-  align-items:start;
-  padding-bottom:22px;
-  border-bottom:3px solid var(--rule);
-  margin-bottom:clamp(28px, 4vw, 44px);
+  display:flex;
+  align-items:baseline;
+  gap:18px;
+  margin-bottom:26px;
 }
-.section-num{
-  font-family:var(--display);
-  font-size:clamp(3.2rem, 9vw, 7.2rem);
-  line-height:0.72;
-  color:var(--blue);
-  letter-spacing:-0.03em;
-  font-variant-numeric:tabular-nums;
-}
-.section-head .h2{ padding-top:clamp(2px, 1vw, 10px); }
-.section-of{
-  display:block;
+.section-count{
   font-family:var(--mono);
-  font-size:0.68rem;
-  font-weight:500;
+  font-size:0.72rem;
+  font-weight:700;
   letter-spacing:0.14em;
-  color:var(--ink-3);
-  margin-bottom:10px;
+  color:var(--accent);
+  flex:none;
+  padding-top:6px;
+}
+.section-rule{
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg, var(--line-hi), transparent);
+  align-self:center;
 }
 
-.stack{ display:grid; gap:clamp(26px, 3.6vw, 44px); }
+.section-body{
+  display:grid;
+  gap:34px;
+}
 
+/* Encabezado de bloque interno */
 .block-label{
   display:flex;
   align-items:center;
   gap:12px;
-  font-family:var(--mono);
-  font-size:0.69rem;
-  font-weight:600;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--ink);
+  color:var(--ink-3);
   margin-bottom:16px;
-}
-.block-label::before{
-  content:"";
-  width:14px; height:14px;
-  background:var(--blue);
-  flex:none;
 }
 .block-label::after{
   content:"";
   flex:1;
-  height:1.5px;
-  background:var(--rule);
+  height:1px;
+  background:var(--line);
 }
 
-/* --- Tarjetas: caja dura, hover que invierte -------------------- */
+/* ═══ TARJETAS ═══════════════════════════════════════════════ */
 
 .grid{
   display:grid;
-  gap:0;
-  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-  border-top:1.5px solid var(--rule);
-  border-left:1.5px solid var(--rule);
+  gap:14px;
+  grid-template-columns:repeat(auto-fit, minmax(255px, 1fr));
 }
-.grid-2{ grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); }
-.grid-4{ grid-template-columns:repeat(auto-fit, minmax(198px, 1fr)); }
+.grid-2{ grid-template-columns:repeat(auto-fit, minmax(310px, 1fr)); }
+.grid-4{ grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); }
 
 .card{
-  border-right:1.5px solid var(--rule);
-  border-bottom:1.5px solid var(--rule);
-  padding:20px clamp(16px, 2vw, 22px) 24px;
-  background:transparent;
-  transition:background .12s linear, color .12s linear;
+  position:relative;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-card);
+  padding:22px;
+  transition:transform .26s cubic-bezier(.2,.7,.3,1), border-color .26s, background .26s, box-shadow .26s;
 }
-.card:hover{ background:var(--blue); color:var(--ink); }
-.card:hover .h3{ color:var(--ink); }
-.card:hover p{ color:var(--blue-tint); }
-.card:hover strong,
-.card:hover em{ color:var(--ink); }
-.card:hover .card-tag{ color:var(--acid); }
+.card:hover{
+  transform:translateY(-4px);
+  border-color:var(--line-hi);
+  background:var(--surface-hi);
+  box-shadow:0 14px 34px -18px #000C, 0 0 0 1px #5B8CFF1A;
+}
+.card p{ margin:0; font-size:0.93rem; line-height:1.62; }
+.card .h3{ margin-bottom:9px; }
 
-.card p{ margin:0; font-size:0.92rem; line-height:1.55; }
-.card .h3{ margin-bottom:8px; }
-
-.card-tag{
-  display:block;
+.card-idx{
   font-family:var(--mono);
-  font-size:0.64rem;
-  font-weight:600;
-  letter-spacing:0.13em;
+  font-size:0.66rem;
+  font-weight:700;
+  letter-spacing:0.12em;
   text-transform:uppercase;
-  color:var(--blue);
-  margin-bottom:12px;
-  transition:color .12s linear;
+  color:var(--accent);
+  display:block;
+  margin-bottom:11px;
 }
 
-/* --- Franja azul a sangre: los puntos clave --------------------- */
-
-.band{
-  background:var(--blue);
-  color:var(--ink);
-  border-block:3px solid var(--rule);
+/* Tarjeta con acento lateral: sólo para los "puntos clave" */
+.keypoints{
+  background:linear-gradient(180deg, #101827, #0C1322);
+  border:1px solid var(--line);
+  border-radius:var(--r-card);
+  padding:26px clamp(20px, 3vw, 30px);
 }
-.band > .wrap{ padding-block:clamp(34px, 4.5vw, 54px); }
-.band .block-label{ color:var(--ink); }
-.band .block-label::before{ background:var(--acid); }
-.band .block-label::after{ background:var(--blue-line); }
+.keypoints > .block-label{ color:var(--accent); }
+.keypoints > .block-label::after{ background:var(--line-hi); }
 
 .klist{
   list-style:none;
   margin:0;
   padding:0;
   display:grid;
-  gap:0;
-  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
-  counter-reset:k;
+  gap:2px;
 }
 .klist li{
   display:grid;
-  grid-template-columns:38px 1fr;
-  gap:10px;
+  grid-template-columns:26px 1fr;
+  gap:12px;
   align-items:start;
-  padding:15px 16px 17px 0;
-  border-top:1.5px solid var(--blue-line);
+  padding:11px 10px;
+  margin-inline:-10px;
+  border-radius:var(--r-sm);
   font-size:0.95rem;
-  line-height:1.5;
-  color:var(--blue-tint);
-  transition:background .12s linear, color .12s linear;
+  line-height:1.6;
+  color:var(--ink-2);
+  transition:background .2s, color .2s;
 }
-.klist li:hover{ background:var(--acid); color:var(--ink-inv); }
+.klist li:hover{ background:#5B8CFF12; color:var(--ink); }
+/* Marcador: un nodo. Se enciende al pasar el mouse. */
 .klist li::before{
-  content:counter(k, decimal-leading-zero);
-  counter-increment:k;
-  font-family:var(--mono);
-  font-size:0.68rem;
-  font-weight:600;
-  letter-spacing:0.06em;
-  color:var(--acid);
-  padding-top:3px;
-  padding-left:16px;
-  transition:color .12s linear;
+  content:"";
+  width:8px;
+  height:8px;
+  margin:9px 0 0 6px;
+  border-radius:50%;
+  border:1.5px solid var(--line-hi);
+  transition:border-color .2s, background .2s, box-shadow .2s;
 }
-.klist li:hover::before{ color:var(--ink-inv); }
+.klist li:hover::before{
+  border-color:var(--accent);
+  background:var(--accent);
+  box-shadow:0 0 0 3px #5B8CFF26;
+}
 .klist b{ color:var(--ink); font-weight:600; }
-.klist li:hover b{ color:var(--ink-inv); }
 
-/* ===============================================================
-   MEDIOS
-   =============================================================== */
+/* ═══ MEDIA: contenedores y estados vacíos ═══════════════════ */
 
-.media{
-  border:3px solid var(--rule);
-  background:var(--bg);
+.media-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-card);
+  overflow:hidden;
 }
+
 .media-head{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:14px;
+  padding:15px 20px;
+  border-bottom:1px solid var(--line);
   flex-wrap:wrap;
-  padding:12px clamp(14px, 2.2vw, 20px);
-  border-bottom:3px solid var(--rule);
-  font-family:var(--mono);
-  font-size:0.69rem;
-  font-weight:600;
-  letter-spacing:0.13em;
-  text-transform:uppercase;
 }
-.media-tag{ color:var(--ink-3); font-weight:500; }
+.media-title{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-size:0.92rem;
+  font-weight:600;
+  color:var(--ink);
+  letter-spacing:-0.01em;
+}
+.media-title svg{ flex:none; color:var(--accent); }
+.media-tag{
+  font-family:var(--mono);
+  font-size:0.65rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  border:1px solid var(--line);
+  border-radius:var(--r-pill);
+  padding:4px 10px;
+}
 
+/* Marco 16:9 */
 .frame{
   position:relative;
   width:100%;
   aspect-ratio:16/9;
-  background:var(--bg-2);
+  background:var(--ground-2);
 }
-.frame-tall{ aspect-ratio:16/10; }
 .frame iframe,
 .frame video,
 .frame img{
@@ -590,462 +585,460 @@ a:hover{ background:var(--acid); color:var(--ink); text-decoration:none; }
   height:100%;
   border:0;
   object-fit:contain;
-  background:var(--bg-2);
+  background:var(--ground-2);
 }
 
-/* Hueco reservado */
+/* Estado "pendiente" — el hueco donde va la imagen o el video */
 .pending{
   position:absolute;
-  inset:0;
+  inset:10px;
   display:flex;
   flex-direction:column;
-  align-items:flex-start;
-  justify-content:flex-end;
-  gap:8px;
-  padding:clamp(18px, 3vw, 30px);
-  background:var(--bg-2);
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-align:center;
+  padding:24px;
+  border:1px dashed var(--line-hi);
+  border-radius:var(--r-sm);
+  background:
+    repeating-linear-gradient(45deg, #0D1524, #0D1524 9px, #0A1020 9px, #0A1020 18px);
 }
-.pending::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:repeating-linear-gradient(90deg, var(--rule) 0 1.5px, transparent 1.5px 26px);
-  pointer-events:none;
-}
-.pending > *{ position:relative; }
-.pending-k{
+.pending .pending-k{
   font-family:var(--mono);
-  font-size:0.64rem;
+  font-size:0.65rem;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.pending .pending-t{
+  font-size:0.95rem;
   font-weight:600;
-  letter-spacing:0.16em;
-  text-transform:uppercase;
-  background:var(--blue);
   color:var(--ink);
-  padding:5px 9px;
-}
-.pending-t{
-  font-family:var(--display);
-  font-size:clamp(1.1rem, 2.6vw, 1.9rem);
-  line-height:0.98;
-  text-transform:uppercase;
-  max-width:22ch;
-}
-.pending-d{
-  font-size:0.86rem;
+  max-width:34ch;
   line-height:1.45;
-  color:var(--ink-2);
-  max-width:52ch;
+}
+.pending .pending-d{
+  font-size:0.83rem;
+  color:var(--ink-3);
+  max-width:46ch;
+  line-height:1.5;
   margin:0;
-  background:var(--bg-2);
-  box-shadow:0 0 0 5px var(--bg-2);
 }
 
-figure{ margin:0; }
-figcaption{
-  padding:12px clamp(14px, 2.2vw, 20px);
-  border-top:3px solid var(--rule);
-  font-size:0.85rem;
-  line-height:1.45;
+/* Marco libre (mapa mental: alto flexible) */
+.frame-tall{ aspect-ratio:16/10; }
+
+/* Selector de partes del video */
+.vparts{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  padding:14px 20px;
+  border-bottom:1px solid var(--line);
+}
+.vpart{
+  font-family:var(--mono);
+  font-size:0.68rem;
+  font-weight:500;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
   color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-pill);
+  padding:7px 14px;
+  cursor:pointer;
+  transition:color .22s, background .22s, border-color .22s, transform .22s cubic-bezier(.2,.7,.3,1);
 }
+.vpart:hover{ color:var(--ink); border-color:var(--line-hi); transform:translateY(-2px); }
+.vpart.active{ color:var(--ink); background:var(--accent-soft); border-color:#5B8CFF4D; }
+.vpart .d{ color:var(--ink-3); margin-left:7px; font-variant-numeric:tabular-nums; }
+.vpart.active .d{ color:var(--accent); }
 
-/* --- Reproductor de podcast ------------------------------------ */
+figcaption{
+  padding:13px 20px;
+  border-top:1px solid var(--line);
+  font-size:0.82rem;
+  color:var(--ink-3);
+  line-height:1.5;
+}
+figure{ margin:0; }
 
-.player-card{ border:3px solid var(--rule); }
-.player-card .media-head{ background:var(--blue); color:var(--ink); border-bottom-color:var(--rule); }
-.player-card .media-tag{ color:var(--acid); }
+/* ═══ REPRODUCTOR DE PODCAST ═════════════════════════════════ */
 
 .player{
   display:flex;
   align-items:center;
-  gap:clamp(14px, 2.5vw, 22px);
-  padding:clamp(16px, 2.6vw, 24px);
-  background:var(--blue);
+  gap:clamp(14px, 3vw, 24px);
+  padding:clamp(18px, 3vw, 26px) clamp(18px, 3vw, 24px);
   flex-wrap:wrap;
 }
 
 .play-btn{
   flex:none;
-  width:58px;
-  height:58px;
-  border:none;
-  border-radius:0;
-  background:var(--acid);
-  color:var(--ink-inv);
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  border:1px solid #5B8CFF59;
+  background:var(--accent-soft);
+  color:var(--accent);
   display:grid;
   place-items:center;
   cursor:pointer;
-  transition:background .12s linear, color .12s linear;
+  transition:transform .22s cubic-bezier(.2,.7,.3,1), background .22s, color .22s, box-shadow .22s;
 }
-.play-btn:hover:not(:disabled){ background:var(--ink); }
-.play-btn:disabled{ background:var(--blue-deep); color:var(--blue-tint); cursor:not-allowed; }
+.play-btn:hover:not(:disabled){
+  background:var(--accent);
+  color:#04070F;
+  transform:scale(1.06);
+  box-shadow:0 0 0 6px #5B8CFF1A;
+}
+.play-btn:active:not(:disabled){ transform:scale(0.97); }
+.play-btn:disabled{ opacity:.4; cursor:not-allowed; }
 .play-btn svg{ pointer-events:none; }
 .play-btn .ico-pause{ display:none; }
 .player.is-playing .play-btn .ico-play{ display:none; }
 .player.is-playing .play-btn .ico-pause{ display:block; }
 
-.player-main{ flex:1 1 250px; min-width:0; display:grid; gap:10px; }
+.player-main{
+  flex:1 1 260px;
+  min-width:0;
+  display:grid;
+  gap:11px;
+}
 
 .player-meta{
   display:flex;
   align-items:baseline;
   justify-content:space-between;
   gap:12px;
-  flex-wrap:wrap;
 }
 .player-name{
-  font-size:0.92rem;
+  font-size:0.93rem;
   font-weight:600;
   color:var(--ink);
   letter-spacing:-0.01em;
 }
 .player-time{
   font-family:var(--mono);
-  font-size:0.73rem;
-  font-weight:500;
-  color:var(--blue-tint);
+  font-size:0.74rem;
+  color:var(--ink-3);
   font-variant-numeric:tabular-nums;
   white-space:nowrap;
 }
-.player-time .cur{ color:var(--acid); }
+.player-time .cur{ color:var(--accent); }
 
+/* Onda de audio: es también la barra de búsqueda */
 .wave{
   display:flex;
-  align-items:flex-end;
-  gap:2px;
-  height:42px;
+  align-items:center;
+  gap:3px;
+  height:40px;
   cursor:pointer;
+  border-radius:var(--r-sm);
 }
 .wave[aria-disabled="true"]{ cursor:default; }
 .wave span{
   flex:1;
   min-width:2px;
-  background:var(--blue-deep);
-  transition:background .1s linear;
+  background:var(--line-hi);
+  border-radius:2px;
+  transform-origin:center;
+  transition:background .18s;
 }
-.wave span.on{ background:var(--acid); }
+.wave span.on{ background:var(--accent); }
+.player.is-playing .wave span.on:last-of-type{ background:var(--accent-2); }
 
 .player-rate{
   flex:none;
   font-family:var(--mono);
   font-size:0.72rem;
-  font-weight:600;
+  font-weight:700;
   letter-spacing:0.06em;
-  color:var(--ink);
+  color:var(--ink-2);
   background:transparent;
-  border:1.5px solid var(--ink);
-  border-radius:0;
-  padding:9px 13px;
+  border:1px solid var(--line);
+  border-radius:var(--r-pill);
+  padding:7px 13px;
   cursor:pointer;
-  transition:background .12s linear, color .12s linear;
+  transition:color .2s, border-color .2s, background .2s;
 }
-.player-rate:hover:not(:disabled){ background:var(--acid); color:var(--ink-inv); border-color:var(--acid); }
-.player-rate:disabled{ opacity:.45; cursor:not-allowed; }
+.player-rate:hover:not(:disabled){ color:var(--ink); border-color:var(--line-hi); background:var(--surface-hi); }
+.player-rate:disabled{ opacity:.4; cursor:not-allowed; }
 
 .player-note{
-  margin:0;
-  padding:12px clamp(16px, 2.6vw, 24px);
-  border-top:1.5px solid var(--rule);
+  padding:0 clamp(18px, 3vw, 24px) 20px;
   font-family:var(--mono);
-  font-size:0.69rem;
+  font-size:0.7rem;
   letter-spacing:0.04em;
-  line-height:1.55;
-  color:var(--ink-2);
-  max-width:none;
+  color:var(--ink-3);
+  line-height:1.6;
 }
 
-/* ===============================================================
-   DIAGRAMAS
-   =============================================================== */
+/* ═══ DIAGRAMAS SVG ══════════════════════════════════════════ */
 
 .diagram{
-  border-right:1.5px solid var(--rule);
-  border-bottom:1.5px solid var(--rule);
-  padding:20px clamp(14px, 2vw, 20px) 22px;
-  transition:background .12s linear;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-card);
+  padding:22px 20px 18px;
+  transition:border-color .26s, transform .26s cubic-bezier(.2,.7,.3,1);
 }
-.diagram:hover{ background:var(--blue); }
-.diagram:hover .svg-hub{ fill:var(--acid); }
-.diagram:hover .diagram-name{ color:var(--acid); border-top-color:var(--blue-line); }
+.diagram:hover{ border-color:var(--line-hi); transform:translateY(-3px); }
 .diagram svg{ width:100%; height:auto; display:block; }
 .diagram-name{
   font-family:var(--mono);
   font-size:0.7rem;
-  font-weight:600;
-  letter-spacing:0.15em;
+  font-weight:700;
+  letter-spacing:0.14em;
   text-transform:uppercase;
+  color:var(--ink);
   margin-top:16px;
-  padding-top:10px;
-  border-top:1.5px solid var(--rule);
 }
 .diagram-desc{
   font-size:0.85rem;
-  line-height:1.45;
-  color:var(--ink-2);
-  margin:6px 0 0;
-}
-.diagram:hover .diagram-desc{ color:var(--blue-tint); }
-
-.svg-node{ fill:var(--ink); stroke:none; }
-.svg-node-open{ fill:var(--bg); stroke:var(--ink); stroke-width:2; }
-.svg-hub{ fill:var(--blue); stroke:none; }
-.svg-link{ stroke:var(--ink); stroke-width:1.8; fill:none; }
-.svg-link-soft{ stroke:var(--ink); stroke-width:1.4; fill:none; opacity:.35; }
-.svg-arrow{ fill:var(--ink); }
-.svg-wire{ stroke:var(--ink); stroke-width:2; }
-.svg-txt{
-  fill:var(--ink);
-  font-family:var(--mono);
-  font-size:7.5px;
-  font-weight:600;
-  letter-spacing:0.12em;
+  color:var(--ink-3);
+  line-height:1.5;
+  margin:5px 0 0;
 }
 
-/* ===============================================================
-   TABLAS
-   =============================================================== */
+.svg-node{ fill:var(--surface-hi); stroke:var(--accent); stroke-width:1.6; }
+.svg-node-alt{ fill:var(--surface-hi); stroke:var(--accent-2); stroke-width:1.6; }
+.svg-hub{ fill:#5B8CFF26; stroke:var(--accent); stroke-width:1.8; }
+.svg-link{ stroke:var(--line-hi); stroke-width:1.5; fill:none; }
+.svg-link-hi{ stroke:var(--accent); stroke-width:1.5; fill:none; opacity:.75; }
+.svg-txt{ fill:var(--ink-3); font-family:var(--mono); font-size:8px; letter-spacing:0.08em; }
 
-.table-wrap{ overflow-x:auto; border:1.5px solid var(--rule); }
+/* ═══ TABLAS ═════════════════════════════════════════════════ */
+
+.table-wrap{
+  overflow-x:auto;
+  border:1px solid var(--line);
+  border-radius:var(--r-card);
+  background:var(--surface);
+}
 table{
   width:100%;
   border-collapse:collapse;
   font-size:0.9rem;
-  min-width:560px;
-  background:var(--bg);
+  min-width:520px;
 }
 thead th{
   text-align:left;
   font-family:var(--mono);
   font-size:0.66rem;
-  font-weight:600;
-  letter-spacing:0.14em;
+  font-weight:700;
+  letter-spacing:0.13em;
   text-transform:uppercase;
-  padding:13px 16px;
-  background:var(--blue);
-  color:var(--ink);
+  color:var(--ink-3);
+  padding:14px 18px;
+  border-bottom:1px solid var(--line-hi);
+  background:var(--ground-2);
   white-space:nowrap;
 }
-thead th .tag-cs{ color:var(--acid); }
-thead th .tag-p2p{ color:var(--blue-tint); }
 tbody td{
-  padding:13px 16px;
-  border-bottom:1.5px solid var(--rule-soft);
+  padding:14px 18px;
+  border-bottom:1px solid var(--line);
   color:var(--ink-2);
-  line-height:1.48;
+  line-height:1.55;
   vertical-align:top;
 }
 tbody tr:last-child td{ border-bottom:none; }
-tbody tr{ transition:background .12s linear; }
-tbody tr:hover{ background:var(--acid); }
-tbody tr:hover td{ color:var(--ink-inv); }
+tbody tr{ transition:background .2s; }
+tbody tr:hover{ background:#5B8CFF0F; }
 tbody td:first-child{ color:var(--ink); font-weight:600; white-space:nowrap; }
+td .tag-cs{ color:var(--accent); }
+td .tag-p2p{ color:var(--accent-2); }
 
-/* ===============================================================
-   CONTENIDO AMPLIADO
-   =============================================================== */
+/* ═══ ACORDEÓN DE CONTENIDO AMPLIADO ═════════════════════════ */
 
-details.expand{ border:3px solid var(--rule); background:var(--bg); }
+details.expand{
+  background:var(--ground-2);
+  border:1px solid var(--line);
+  border-radius:var(--r-card);
+  overflow:hidden;
+  transition:border-color .24s;
+}
+details.expand:hover{ border-color:var(--line-hi); }
+details.expand[open]{ border-color:var(--line-hi); }
+
 details.expand > summary{
   list-style:none;
   cursor:pointer;
-  padding:15px clamp(14px, 2.2vw, 20px);
+  padding:16px 20px;
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:12px;
   font-family:var(--mono);
-  font-size:0.7rem;
-  font-weight:600;
-  letter-spacing:0.13em;
+  font-size:0.71rem;
+  font-weight:700;
+  letter-spacing:0.14em;
   text-transform:uppercase;
-  transition:background .12s linear, color .12s linear;
+  color:var(--ink-2);
+  transition:color .2s, background .2s;
 }
 details.expand > summary::-webkit-details-marker{ display:none; }
-details.expand > summary:hover{ background:var(--surface); color:var(--ink); }
-details.expand > summary .plus{
+details.expand > summary:hover{ color:var(--ink); background:var(--surface); }
+details.expand > summary .caret{
   margin-left:auto;
-  font-family:var(--display);
-  font-size:1.5rem;
-  line-height:0.6;
-  color:var(--blue);
-  transition:transform .18s linear, color .12s linear;
+  width:18px;
+  height:18px;
+  flex:none;
+  color:var(--accent);
+  transition:transform .3s cubic-bezier(.2,.7,.3,1);
 }
-details.expand > summary:hover .plus{ color:var(--acid); }
-details.expand[open] > summary{ background:var(--blue); color:var(--ink); }
-details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid); }
+details.expand[open] > summary .caret{ transform:rotate(180deg); }
+details.expand > summary .sq{
+  width:7px;
+  height:7px;
+  flex:none;
+  border:1.5px solid var(--accent);
+  border-radius:1px;
+  transition:background .24s;
+}
+details.expand[open] > summary .sq{ background:var(--accent); }
 
-.expand-body{ padding:8px clamp(14px, 2.2vw, 24px) 26px; }
+.expand-body{
+  padding:6px 20px 24px;
+  border-top:1px solid var(--line);
+}
 .expand-body h4{
-  font-family:var(--text);
-  font-size:0.98rem;
-  font-weight:700;
+  font-size:0.95rem;
+  font-weight:650;
+  color:var(--ink);
   letter-spacing:-0.01em;
-  margin:24px 0 8px;
-  padding-top:12px;
-  border-top:1.5px solid var(--rule-soft);
+  margin:22px 0 8px;
 }
-.expand-body h4:first-child{ margin-top:16px; border-top:none; padding-top:0; }
-.expand-body p, .expand-body li{ font-size:0.92rem; line-height:1.62; }
-.expand-body ul{ margin:0 0 1em; padding-left:20px; color:var(--ink-2); max-width:var(--prose); }
+.expand-body h4:first-child{ margin-top:18px; }
+.expand-body p,
+.expand-body li{ font-size:0.92rem; line-height:1.68; }
+.expand-body ul{
+  margin:0 0 1em;
+  padding-left:18px;
+  color:var(--ink-2);
+  max-width:var(--prose);
+}
 .expand-body li{ margin-bottom:7px; }
-.expand-body li::marker{ color:var(--blue); }
+.expand-body li::marker{ color:var(--ink-3); }
 
-/* ===============================================================
-   CIERRE, BIBLIOGRAFIA Y PIE
-   =============================================================== */
-
-.section-invert{ background:var(--invert-bg); color:var(--ink-inv); }
-.section-invert .h2{ color:var(--ink-inv); }
-.section-invert .section-num{ color:var(--blue); }
-.section-invert .section-head{ border-bottom-color:var(--ink-inv); }
-.section-invert .section-of{ color:var(--ink-inv-2); }
-.section-invert .block-label{ color:var(--ink-inv); }
-.section-invert .block-label::before{ background:var(--blue); }
-.section-invert .block-label::after{ background:var(--ink-inv); }
-.section-invert p{ color:var(--ink-inv-2); }
-.section-invert figcaption{ color:var(--ink-inv-2); border-top-color:var(--ink-inv); }
-.section-invert .media{ border-color:var(--ink-inv); background:var(--invert-bg); }
-.section-invert .media-head{ border-bottom-color:var(--ink-inv); }
-.section-invert .frame{ background:var(--invert-bg-2); }
-.section-invert .pending{ background:var(--invert-bg-2); }
-.section-invert .pending::before{ background-image:repeating-linear-gradient(90deg, var(--invert-rule) 0 1.5px, transparent 1.5px 26px); }
-.section-invert .pending-t{ color:var(--ink-inv); }
-.section-invert .pending-d{ color:var(--ink-inv-2); background:var(--invert-bg); box-shadow:0 0 0 5px var(--invert-bg); }
-.section-invert details.expand{ border-color:var(--ink-inv); background:transparent; }
-.section-invert details.expand > summary{ color:var(--ink-inv); }
-.section-invert details.expand > summary:hover{ background:var(--invert-bg-2); color:var(--ink-inv); }
-.section-invert details.expand[open] > summary{ background:var(--ink-inv); color:var(--invert-bg); }
-.section-invert details.expand[open] > summary .plus{ color:var(--acid); }
-.section-invert .expand-body p{ color:var(--ink-inv-2); }
-.section-invert .expand-body h4{ color:var(--ink-inv); border-top-color:var(--invert-rule); }
+/* ═══ BIBLIOGRAFÍA ═══════════════════════════════════════════ */
 
 .biblio{
   list-style:none;
   margin:0;
   padding:0;
-  counter-reset:b;
+  display:grid;
+  gap:0;
 }
 .biblio li{
   display:grid;
-  grid-template-columns:44px 1fr;
-  gap:12px;
-  padding:14px 0;
-  border-bottom:1.5px solid var(--invert-rule);
+  grid-template-columns:34px 1fr;
+  gap:14px;
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
   font-size:0.92rem;
-  line-height:1.5;
-  color:var(--ink-inv-2);
-  transition:color .12s linear;
+  line-height:1.6;
+  color:var(--ink-2);
 }
-.biblio li:hover{ color:var(--ink-inv); }
 .biblio li:last-child{ border-bottom:none; }
 .biblio li::before{
-  content:counter(b, decimal-leading-zero);
+  content:"[" counter(b) "]";
   counter-increment:b;
   font-family:var(--mono);
   font-size:0.68rem;
-  font-weight:600;
-  color:var(--blue);
-  padding-top:3px;
+  font-weight:700;
+  color:var(--ink-3);
+  padding-top:4px;
 }
-.biblio b{ color:var(--ink-inv); font-weight:600; }
+.biblio{ counter-reset:b; }
+.biblio b{ color:var(--ink); font-weight:600; }
 .biblio .src{
   display:block;
   font-family:var(--mono);
-  font-size:0.67rem;
-  letter-spacing:0.04em;
-  color:var(--ink-inv-2);
-  margin-top:4px;
+  font-size:0.68rem;
+  letter-spacing:0.05em;
+  color:var(--ink-3);
+  margin-top:3px;
   word-break:break-word;
 }
 
+/* ═══ PIE ════════════════════════════════════════════════════ */
+
 .footer{
-  background:var(--blue);
-  color:var(--ink);
-  padding-block:clamp(34px, 5vw, 56px);
+  padding-block:52px 60px;
+  border-top:1px solid var(--line);
+  background:var(--ground-2);
 }
 .footer-inner{
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
-  gap:28px;
+  gap:26px;
   flex-wrap:wrap;
 }
 .footer-note{
   font-family:var(--mono);
-  font-size:0.71rem;
-  letter-spacing:0.09em;
-  line-height:1.95;
-  color:var(--blue-tint);
-  text-transform:uppercase;
+  font-size:0.7rem;
+  letter-spacing:0.08em;
+  color:var(--ink-3);
+  line-height:1.9;
 }
-.footer-note b{ color:var(--acid); font-weight:600; }
-.footer-mark{
-  font-family:var(--display);
-  font-size:clamp(2.2rem, 7vw, 4.4rem);
-  line-height:0.82;
-  text-transform:uppercase;
-  color:var(--ink);
-  letter-spacing:-0.02em;
-}
+.footer-note b{ color:var(--ink-2); font-weight:500; }
 
+/* Botón volver arriba */
 .to-top{
   position:fixed;
-  right:clamp(14px, 2.5vw, 26px);
-  bottom:clamp(14px, 2.5vw, 26px);
-  z-index:70;
-  width:46px;
-  height:46px;
-  border:2px solid var(--acid);
-  border-radius:0;
-  background:var(--acid);
-  color:var(--ink-inv);
+  right:clamp(16px, 3vw, 28px);
+  bottom:clamp(16px, 3vw, 28px);
+  z-index:60;
+  width:42px;
+  height:42px;
+  border-radius:50%;
   display:grid;
   place-items:center;
+  background:#101827E6;
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--line-hi);
+  color:var(--ink-2);
   cursor:pointer;
   opacity:0;
   visibility:hidden;
-  transform:translateY(8px);
-  transition:opacity .2s linear, transform .2s linear, visibility .2s linear, background .12s linear;
+  transform:translateY(10px);
+  transition:opacity .28s, transform .28s, visibility .28s, color .2s, border-color .2s;
 }
 .to-top.show{ opacity:1; visibility:visible; transform:none; }
-.to-top:hover{ background:var(--blue); color:var(--ink); border-color:var(--blue); }
+.to-top:hover{ color:var(--accent); border-color:var(--accent); }
 
-/* --- Revelado -------------------------------------------------- */
+/* ═══ REVELADO AL HACER SCROLL ═══════════════════════════════ */
 
 .reveal{
   opacity:0;
-  transform:translateY(14px);
-  transition:opacity .45s linear, transform .45s cubic-bezier(.2,.7,.3,1);
+  transform:translateY(16px);
+  transition:opacity .6s cubic-bezier(.2,.7,.3,1), transform .6s cubic-bezier(.2,.7,.3,1);
 }
 .reveal.in{ opacity:1; transform:none; }
 
-/* ===============================================================
-   RESPONSIVE
-   =============================================================== */
+/* ═══ RESPONSIVE ═════════════════════════════════════════════ */
 
-@media (max-width: 900px){
-  .navbar-inner{ flex-direction:column; align-items:stretch; }
-  .brand{
-    border-right:none;
-    border-bottom:1.5px solid var(--rule);
-    margin-right:0;
-    padding:12px 0;
-  }
-  .navlinks{ margin-left:0; }
-  .navlinks a{ padding:12px 14px; }
-  html{ scroll-padding-top:120px; }
-  .section{ scroll-margin-top:112px; }
-  .hero::before{ background-image:repeating-linear-gradient(90deg, var(--rule-soft) 0 1px, transparent 1px calc(100% / 6)); }
+@media (max-width: 860px){
+  .navbar-inner{ height:auto; padding-block:10px; flex-wrap:wrap; gap:10px; }
+  .navlinks{ margin-left:0; width:100%; }
+  html{ scroll-padding-top:130px; }
+  .section{ scroll-margin-top:120px; }
 }
 
-@media (max-width: 620px){
-  body{ font-size:16px; }
-  .section-head{ grid-template-columns:1fr; gap:8px; }
-  .section-num{ font-size:clamp(3rem, 18vw, 5rem); }
-  .thesis{ padding:20px 18px; }
-  .klist li{ grid-template-columns:32px 1fr; }
-  .klist li::before{ padding-left:10px; }
+@media (max-width: 560px){
+  body{ font-size:15.5px; }
+  .hero{ padding-block:56px 52px; }
+  .thesis{ padding-left:16px; }
+  .player{ gap:14px; }
+  .play-btn{ width:50px; height:50px; }
   .player-rate{ order:3; }
-  .brand span{ display:inline; }
+  .card{ padding:18px; }
+  .brand span{ display:none; }
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -1059,39 +1052,26 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
 }
 
 @media print{
-  .navbar,.to-top,.player,.schematic{ display:none !important; }
+  .navbar,.to-top,.player,#net{ display:none !important; }
   body{ background:#fff; color:#000; }
-  .band{ background:#fff; color:#000; border-color:#000; }
-  .band .klist li{ color:#000; border-top-color:#999; }
-  .band .klist li::before{ color:#000; }
-  .band .klist b{ color:#000; }
-  .section-invert{ background:#fff; color:#000; }
-  .section-invert .h2,.section-invert .biblio b{ color:#000; }
-  .biblio li{ color:#000; border-bottom-color:#999; }
-  .biblio li::before{ color:#000; }
-  .card,.diagram,.media,.table-wrap,details.expand{ break-inside:avoid; }
+  .card,.diagram,.media-card,.table-wrap,details.expand{ break-inside:avoid; }
+  details.expand{ }
 }
 </style>
 </head>
 <body>
 
-<!-- ===============================================================
+<!-- ══════════════════════════════════════════════════════════
      PORTADA
-     =============================================================== -->
+     ══════════════════════════════════════════════════════════ -->
 <header class="hero" id="inicio">
+  <canvas id="net" aria-hidden="true"></canvas>
   <div class="wrap">
-    <div class="hero-top">
-      <span class="mono">Trabajo Práctico N.º 1 <b>/ Agosto 2026</b></span>
-      <span class="mono">Eje Temático <b>01 / 03</b></span>
-    </div>
+    <div class="eyebrow mono">Trabajo Práctico N.º 1 · Agosto 2026</div>
 
-    <h1 class="display">
-      <span class="ln">Sistemas</span>
-      <span class="ln">Operativos</span>
-      <span class="ln blue">Distribuidos</span>
-    </h1>
+    <h1 class="display">Sistemas Operativos <em>Distribuidos</em></h1>
 
-    <p class="hero-sub">Eje Temático 1 · Fundamentos de los Sistemas Operativos Distribuidos</p>
+    <p class="hero-sub">Eje Temático 1 — Fundamentos de los Sistemas Operativos Distribuidos</p>
 
     <blockquote class="thesis">
       <q>Un sistema distribuido es una colección de computadoras independientes que aparecen ante los usuarios del sistema como una única computadora.</q>
@@ -1099,68 +1079,46 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
     </blockquote>
 
     <div class="meta-row">
-      <div class="cell">Temas<b>6</b></div>
-      <div class="cell">Podcast<b id="cell-podcast">2 min</b></div>
-      <div class="cell">Video<b id="cell-video">5 min</b></div>
-      <div class="cell">Integrantes<b id="cell-integrantes">Por definir</b></div>
+      <span class="chip"><b>6</b> temas</span>
+      <span class="chip">Podcast <b id="chip-podcast">2 min</b></span>
+      <span class="chip">Video <b id="chip-video">5 min</b></span>
+      <span class="chip" id="chip-integrantes">Integrantes</span>
     </div>
+
+    <p class="netstat" id="netstat"><span class="dot"></span><span id="netstat-txt">inicializando red…</span></p>
   </div>
 </header>
 
-<!-- Esquemático en vivo -->
-<div class="schematic">
-  <div class="schematic-head">
-    <span>Fig. 00 · Red distribuida en funcionamiento</span>
-    <span>Tiempo real</span>
-  </div>
-  <div class="schematic-canvas"><canvas id="net" aria-hidden="true"></canvas></div>
-  <p class="schematic-foot" id="netstat"><span class="flag"></span><span id="netstat-txt">inicializando red…</span></p>
-</div>
-
-<!-- ===============================================================
-     NAVEGACION
-     =============================================================== -->
-<nav class="navbar" id="navbar" aria-label="Temas del eje">
-  <div class="wrap navbar-inner">
-    <a class="brand" href="#inicio"><i></i><span>EJE 01</span></a>
-    <div class="navlinks" id="navlinks">
-      <a href="#tema1"><span class="n">01</span> Introducción</a>
-      <a href="#tema2"><span class="n">02</span> Arquitecturas</a>
-      <a href="#tema3"><span class="n">03</span> Redes</a>
-      <a href="#tema4"><span class="n">04</span> Cliente / P2P</a>
-      <a href="#tema5"><span class="n">05</span> Diseño</a>
-      <a href="#tema6"><span class="n">06</span> Funciones</a>
-    </div>
-    <div class="progress" id="progress"></div>
-  </div>
-</nav>
-
-<!-- ===============================================================
-     MATERIAL INTRODUCTORIO
-     =============================================================== -->
-<section class="section" id="medios">
+<!-- ══════════════════════════════════════════════════════════
+     MEDIOS DE LA PORTADA: podcast · mapa mental · video
+     ══════════════════════════════════════════════════════════ -->
+<section class="section" id="medios" style="border-bottom:1px solid var(--line);">
   <div class="wrap">
-    <header class="section-head reveal">
-      <span class="section-num">00</span>
-      <div>
-        <span class="section-of">Portada</span>
-        <h2 class="h2">Material introductorio</h2>
-      </div>
-    </header>
+    <div class="section-head">
+      <span class="section-count">00</span>
+      <h2 class="h2">Material introductorio</h2>
+      <span class="section-rule"></span>
+    </div>
 
-    <div class="stack">
+    <div class="section-body">
 
-      <!-- PODCAST -->
-      <div class="player-card reveal">
+      <!-- ── PODCAST ─────────────────────────────────────── -->
+      <div class="media-card reveal">
         <div class="media-head">
-          <span>Podcast introductorio</span>
+          <div class="media-title">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/>
+            </svg>
+            Podcast introductorio
+          </div>
           <span class="media-tag" id="podcast-tag">Audio · 2 min</span>
         </div>
 
         <div class="player" id="player">
           <button class="play-btn" id="play-btn" type="button" aria-label="Reproducir podcast" disabled>
-            <svg class="ico-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l14-8z"/></svg>
-            <svg class="ico-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16"/><rect x="14" y="4" width="5" height="16"/></svg>
+            <svg class="ico-play" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.29-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z"/></svg>
+            <svg class="ico-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
           </button>
 
           <div class="player-main">
@@ -1174,36 +1132,49 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
           <button class="player-rate" id="rate-btn" type="button" disabled>1.0×</button>
         </div>
 
-        <p class="player-note" id="podcast-note">// audio pendiente — pegá la URL del .mp3 en CONFIG.podcast.src</p>
+        <p class="player-note" id="podcast-note">// audio pendiente de cargar — pegá la URL del .mp3 en <b>CONFIG.podcast.src</b></p>
         <audio id="audio" preload="metadata"></audio>
       </div>
 
-      <!-- MAPA MENTAL -->
-      <figure class="media reveal">
+      <!-- ── MAPA MENTAL ─────────────────────────────────── -->
+      <figure class="media-card reveal">
         <div class="media-head">
-          <span>Mapa mental del eje</span>
+          <div class="media-title">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/>
+              <path d="M12 7.4v4.2M12 11.6 6.6 16M12 11.6 17.4 16" stroke-linecap="round"/>
+            </svg>
+            Mapa mental del eje temático
+          </div>
           <span class="media-tag">Imagen</span>
         </div>
         <div class="frame frame-tall" data-img="mapaMental">
           <div class="pending">
             <span class="pending-k">Espacio reservado</span>
-            <span class="pending-t">Mapa mental del eje temático</span>
-            <p class="pending-d">Los seis temas del eje y cómo se relacionan entre sí. Formato horizontal.</p>
+            <span class="pending-t">Mapa Mental del Eje Temático</span>
+            <p class="pending-d">Cargá acá la imagen del mapa mental completo del Eje 1. Formato horizontal recomendado.</p>
           </div>
         </div>
+        <figcaption>Vista general de los seis temas del eje y cómo se relacionan entre sí.</figcaption>
       </figure>
 
-      <!-- VIDEO -->
-      <figure class="media reveal">
+      <!-- ── VIDEO GENERAL ───────────────────────────────── -->
+      <figure class="media-card reveal">
         <div class="media-head">
-          <span>Video general</span>
+          <div class="media-title">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="2.5" y="5" width="14" height="14" rx="2.5"/><path d="m16.5 10 5-3v10l-5-3z" stroke-linejoin="round"/>
+            </svg>
+            Video general del eje
+          </div>
           <span class="media-tag" id="video-tag">Video · 5 min</span>
         </div>
+        <div class="vparts" id="video-parts" hidden></div>
         <div class="frame" id="video-frame">
           <div class="pending">
             <span class="pending-k">Espacio reservado</span>
-            <span class="pending-t">Recorrido por el eje temático</span>
-            <p class="pending-d">Pegá el enlace de YouTube o de Drive en CONFIG.video.url y el reproductor aparece solo.</p>
+            <span class="pending-t">Video general — recorrido por el Eje Temático 1</span>
+            <p class="pending-d">Cargá los archivos en <b>CONFIG.video.partes</b> o pegá un enlace de YouTube en <b>CONFIG.video.url</b>.</p>
           </div>
         </div>
         <figcaption>Síntesis audiovisual de los seis temas: definición, arquitecturas, redes, modelos de interacción y criterios de diseño.</figcaption>
@@ -1213,242 +1184,247 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════════════════════
+     MENÚ DE NAVEGACIÓN
+     ══════════════════════════════════════════════════════════ -->
+<nav class="navbar" id="navbar" aria-label="Temas del eje">
+  <div class="wrap navbar-inner">
+    <a class="brand" href="#inicio"><span class="brand-mark"></span><span>EJE 01</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="#tema1"><span class="n">01</span> Introducción a los SOD</a>
+      <a href="#tema2"><span class="n">02</span> Modelos y Arquitecturas</a>
+      <a href="#tema3"><span class="n">03</span> Redes de Interconexión</a>
+      <a href="#tema4"><span class="n">04</span> Cliente-Servidor y P2P</a>
+      <a href="#tema5"><span class="n">05</span> Características de Diseño</a>
+      <a href="#tema6"><span class="n">06</span> Funciones y Servicios</a>
+    </div>
+    <div class="progress" id="progress"></div>
+  </div>
+</nav>
+
 <main>
 
-<!-- ===============================================================
+<!-- ══════════════════════════════════════════════════════════
      TEMA 1
-     =============================================================== -->
+     ══════════════════════════════════════════════════════════ -->
 <section class="section" id="tema1">
   <div class="wrap">
-    <header class="section-head reveal">
-      <span class="section-num">01</span>
-      <div>
-        <span class="section-of">Tema 01 de 06</span>
-        <h2 class="h2">Introducción a los Sistemas Operativos Distribuidos</h2>
-      </div>
-    </header>
+    <div class="section-head reveal">
+      <span class="section-count">Tema 01 / 06</span>
+      <h2 class="h2">Introducción a los Sistemas Operativos Distribuidos</h2>
+      <span class="section-rule"></span>
+    </div>
 
-    <div class="stack">
+    <div class="section-body">
       <p class="lead reveal">Un Sistema Operativo Distribuido administra un conjunto de computadoras autónomas conectadas por una red y las presenta ante el usuario como una única máquina coherente. El problema central no es el hardware, que hoy permite conectar decenas de CPU a bajo costo, sino el software: mantener la ilusión de un sistema único cuando por detrás hay muchos, comunicándose exclusivamente por mensajes, sin memoria ni reloj compartidos.</p>
 
-      <figure class="media reveal">
+      <figure class="media-card reveal">
         <div class="frame" data-img="tema1">
           <div class="pending">
             <span class="pending-k">Imagen · Tema 01</span>
-            <span class="pending-t">Concepto general</span>
-            <p class="pending-d">Computadoras conectadas en red trabajando de forma coordinada y compartiendo recursos, sin servidor central.</p>
+            <span class="pending-t">Concepto general de sistema operativo distribuido</span>
+            <p class="pending-d">Varias computadoras conectadas en red trabajando de forma coordinada y compartiendo recursos, sin servidor central.</p>
           </div>
         </div>
       </figure>
 
-      <div class="reveal">
-        <div class="block-label">Tres nociones que se confunden</div>
-        <div class="grid">
-          <article class="card">
-            <span class="card-tag">SOR</span>
-            <h3 class="h3">Sistema Operativo de Red</h3>
-            <p>Cada nodo conserva su propio sistema operativo autónomo y sólo se agregan servicios de red encima: archivos compartidos, impresión, correo. El usuario <strong>sabe</strong> que hay máquinas distintas.</p>
-          </article>
-          <article class="card">
-            <span class="card-tag">SOD</span>
-            <h3 class="h3">Sistema Operativo Distribuido</h3>
-            <p>Oculta la existencia de múltiples procesadores y ofrece una <strong>imagen única de sistema</strong>. El usuario no necesita saber en qué máquina corre un proceso ni dónde vive un archivo.</p>
-          </article>
-          <article class="card">
-            <span class="card-tag">Hardware</span>
-            <h3 class="h3">Multiprocesador vs. multicomputadora</h3>
-            <p>Hardware <strong>fuertemente acoplado</strong> (memoria compartida) frente a <strong>débilmente acoplado</strong> (memoria distribuida, comunicación por mensajes). Sobre ambos puede construirse un SOD.</p>
-          </article>
-        </div>
+      <div class="grid reveal">
+        <article class="card">
+          <span class="card-idx">SOR</span>
+          <h3 class="h3">Sistema Operativo de Red</h3>
+          <p>Cada nodo conserva su propio sistema operativo autónomo y sólo se agregan servicios de red encima: archivos compartidos, impresión, correo. El usuario <strong>sabe</strong> que hay máquinas distintas.</p>
+        </article>
+        <article class="card">
+          <span class="card-idx">SOD</span>
+          <h3 class="h3">Sistema Operativo Distribuido</h3>
+          <p>Oculta la existencia de múltiples procesadores y ofrece una <strong>imagen única de sistema</strong>. El usuario no necesita saber en qué máquina corre un proceso ni dónde vive un archivo.</p>
+        </article>
+        <article class="card">
+          <span class="card-idx">HW</span>
+          <h3 class="h3">Multiprocesador vs. multicomputadora</h3>
+          <p>Hardware <strong>fuertemente acoplado</strong> (memoria compartida) frente a <strong>débilmente acoplado</strong> (memoria distribuida, comunicación por mensajes). Sobre ambos puede construirse un SOD.</p>
+        </article>
       </div>
-    </div>
-  </div>
 
-  <div class="band reveal">
-    <div class="wrap">
-      <div class="block-label">Puntos clave</div>
-      <ul class="klist">
-        <li><span><b>Definición.</b> Colección de computadoras independientes que se muestran ante los usuarios como una sola computadora (Tanenbaum).</span></li>
-        <li><span><b>Nodo o sitio.</b> Cada computadora autónoma del sistema, con CPU, memoria y, opcionalmente, almacenamiento propio.</span></li>
-        <li><span><b>Proceso distribuido.</b> Unidad de ejecución que puede requerir la cooperación de varios nodos para completarse.</span></li>
-        <li><span><b>Middleware.</b> Capa entre el SO de cada nodo y las aplicaciones; ofrece comunicación, nombrado y seguridad de forma independiente del hardware.</span></li>
-        <li><span><b>Acoplamiento.</b> Débil (cada nodo mantiene autonomía aunque falle la red) frente a fuerte (memoria compartida, fallas correlacionadas).</span></li>
-        <li><span><b>Transparencia.</b> Propiedad central: ocultar la separación física de los componentes. Se desarrolla en el Tema 05.</span></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="wrap" style="padding-block:clamp(34px,4.5vw,54px);">
-    <details class="expand reveal">
-      <summary>Contenido ampliado · Evolución histórica y contraste con lo centralizado <span class="plus">+</span></summary>
-      <div class="expand-body">
-        <h4>El contraste con los sistemas centralizados</h4>
-        <p>Un sistema centralizado consta de una sola CPU, su memoria, sus periféricos y algunas terminales. El abaratamiento de los microprocesadores y la aparición de redes de alta velocidad hicieron no sólo posible sino fácil reunir sistemas compuestos por un gran número de CPU conectadas. Como señala Tanenbaum, la única mosca en la sopa es el software: los sistemas distribuidos necesitan un software radicalmente distinto al de los centralizados.</p>
-
-        <h4>El matiz de Tanenbaum y Van Steen</h4>
-        <p>Para que el diseño funcione, el sistema debe presentarse ante el usuario como un solo sistema coherente, escondiendo toda la complejidad de tener múltiples computadores por detrás. Dicho de otro modo: un sistema distribuido es un grupo de computadores independientes que cooperan para dar un servicio único, hablándose exclusivamente por mensajes, y esforzándose, muchas veces con bastante ingeniería de por medio, por mantener la ilusión de que del otro lado hay un solo sistema y no un enjambre de máquinas.</p>
-
-        <h4>Evolución histórica</h4>
-        <ul>
-          <li><strong>Sistemas operativos de red</strong> incorporados a un SO monolítico convencional (por ejemplo, las extensiones de red de UNIX 4BSD).</li>
-          <li><strong>Servicios distribuidos progresivos</strong>: NFS, RPC y NIS de Sun, dentro de la arquitectura ONC.</li>
-          <li><strong>Primeros SOD propiamente dichos</strong>, todavía sobre arquitecturas monolíticas: Sprite, de la Universidad de Berkeley.</li>
-          <li><strong>SOD basados en micronúcleo</strong> (m-kernel), que separan los servicios de un núcleo mínimo: Mach (CMU), Amoeba (diseñado por Tanenbaum) y Chorus (INRIA, Francia).</li>
+      <div class="keypoints reveal">
+        <div class="block-label mono">Puntos clave</div>
+        <ul class="klist">
+          <li><span><b>Definición.</b> Colección de computadoras independientes que se muestran ante los usuarios como una sola computadora (Tanenbaum).</span></li>
+          <li><span><b>Nodo o sitio.</b> Cada computadora autónoma del sistema, con CPU, memoria y, opcionalmente, almacenamiento propio.</span></li>
+          <li><span><b>Proceso distribuido.</b> Unidad de ejecución que puede requerir la cooperación de varios nodos para completarse.</span></li>
+          <li><span><b>Middleware.</b> Capa entre el SO de cada nodo y las aplicaciones; ofrece comunicación, nombrado y seguridad de forma independiente del hardware.</span></li>
+          <li><span><b>Acoplamiento.</b> Débil (cada nodo mantiene autonomía aunque falle la red) frente a fuerte (memoria compartida, fallas correlacionadas).</span></li>
+          <li><span><b>Transparencia.</b> Propiedad central: ocultar la separación física de los componentes. Se desarrolla en el Tema 05.</span></li>
         </ul>
-
-        <h4>El motor del cambio</h4>
-        <p>El desarrollo de los SOD estuvo motivado por dos fuerzas simultáneas durante la década de 1980: el abaratamiento sostenido de los microprocesadores y la expansión de las redes de área local. Juntas convirtieron a la computación distribuida en la opción económicamente razonable frente a un único mainframe.</p>
       </div>
-    </details>
+
+      <details class="expand reveal">
+        <summary><span class="sq"></span> Contenido ampliado — evolución histórica y contraste con lo centralizado
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="expand-body">
+          <h4>El contraste con los sistemas centralizados</h4>
+          <p>Un sistema centralizado consta de una sola CPU, su memoria, sus periféricos y algunas terminales. El abaratamiento de los microprocesadores y la aparición de redes de alta velocidad hicieron no sólo posible sino fácil reunir sistemas compuestos por un gran número de CPU conectadas. Como señala Tanenbaum, la única mosca en la sopa es el software: los sistemas distribuidos necesitan un software radicalmente distinto al de los centralizados.</p>
+
+          <h4>El matiz de Tanenbaum y Van Steen</h4>
+          <p>Para que el diseño funcione, el sistema debe presentarse ante el usuario como un solo sistema coherente, escondiendo toda la complejidad de tener múltiples computadores por detrás. Dicho de otro modo: un sistema distribuido es un grupo de computadores independientes que cooperan para dar un servicio único, hablándose exclusivamente por mensajes, y esforzándose, muchas veces con bastante ingeniería de por medio, por mantener la ilusión de que del otro lado hay un solo sistema y no un enjambre de máquinas.</p>
+
+          <h4>Evolución histórica</h4>
+          <ul>
+            <li><strong>Sistemas operativos de red</strong> incorporados a un SO monolítico convencional (por ejemplo, las extensiones de red de UNIX 4BSD).</li>
+            <li><strong>Servicios distribuidos progresivos</strong>: NFS, RPC y NIS de Sun, dentro de la arquitectura ONC.</li>
+            <li><strong>Primeros SOD propiamente dichos</strong>, todavía sobre arquitecturas monolíticas: Sprite, de la Universidad de Berkeley.</li>
+            <li><strong>SOD basados en micronúcleo</strong> (m-kernel), que separan los servicios de un núcleo mínimo: Mach (CMU), Amoeba (diseñado por Tanenbaum) y Chorus (INRIA, Francia).</li>
+          </ul>
+
+          <h4>El motor del cambio</h4>
+          <p>El desarrollo de los SOD estuvo motivado por dos fuerzas simultáneas durante la década de 1980: el abaratamiento sostenido de los microprocesadores y la expansión de las redes de área local. Juntas convirtieron a la computación distribuida en la opción económicamente razonable frente a un único mainframe.</p>
+        </div>
+      </details>
+    </div>
   </div>
 </section>
 
-<!-- ===============================================================
+<!-- ══════════════════════════════════════════════════════════
      TEMA 2
-     =============================================================== -->
-<section class="section alt" id="tema2">
+     ══════════════════════════════════════════════════════════ -->
+<section class="section" id="tema2">
   <div class="wrap">
-    <header class="section-head reveal">
-      <span class="section-num">02</span>
-      <div>
-        <span class="section-of">Tema 02 de 06</span>
-        <h2 class="h2">Modelos y Arquitecturas</h2>
-      </div>
-    </header>
+    <div class="section-head reveal">
+      <span class="section-count">Tema 02 / 06</span>
+      <h2 class="h2">Modelos y Arquitecturas</h2>
+      <span class="section-rule"></span>
+    </div>
 
-    <div class="stack">
+    <div class="section-body">
       <p class="lead reveal">Un modelo arquitectónico describe dónde se ubican los componentes de un sistema distribuido a lo largo de la red y qué relaciones mantienen entre sí: el patrón funcional de comunicación. Sobre esa base, la bibliografía reconoce además tres modelos fundamentales que atraviesan a cualquier sistema distribuido, sea cual sea el estilo elegido.</p>
 
-      <figure class="media reveal">
+      <figure class="media-card reveal">
         <div class="frame" data-img="tema2">
           <div class="pending">
             <span class="pending-k">Imagen · Tema 02</span>
-            <span class="pending-t">Centralizado vs. entre pares</span>
-            <p class="pending-d">Cliente-Servidor a la izquierda, Peer-to-Peer a la derecha, con la diferencia visualmente evidente.</p>
+            <span class="pending-t">Comparación de modelos arquitectónicos</span>
+            <p class="pending-d">Cliente-Servidor, Peer-to-Peer y arquitectura cooperativa dentro de una misma composición, con las diferencias visualmente evidentes.</p>
           </div>
         </div>
       </figure>
 
-      <div class="reveal">
-        <div class="block-label">Estilos arquitectónicos</div>
-        <div class="grid grid-2">
+      <div>
+        <div class="block-label mono reveal">Estilos arquitectónicos</div>
+        <div class="grid grid-2 reveal">
           <article class="card">
-            <span class="card-tag">Control descendente</span>
+            <span class="card-idx">Control descendente</span>
             <h3 class="h3">En capas (layered)</h3>
             <p>Los componentes se organizan en niveles y cada capa sólo invoca servicios de la capa inmediatamente inferior. El control fluye hacia abajo en las peticiones y hacia arriba en las respuestas.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Invocación remota</span>
+            <span class="card-idx">Invocación remota</span>
             <h3 class="h3">Basada en objetos</h3>
             <p>Cada componente se modela como un objeto que invoca operaciones de otros objetos, típicamente mediante invocación remota de métodos (RMI) o intermediarios como CORBA.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Repositorio común</span>
+            <span class="card-idx">Repositorio común</span>
             <h3 class="h3">Centrada en datos</h3>
             <p>Los procesos no se comunican directamente entre sí sino a través de un repositorio o medio común: un espacio de tuplas, una base de datos compartida.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Publicar / suscribir</span>
+            <span class="card-idx">Publicar / suscribir</span>
             <h3 class="h3">Basada en eventos</h3>
             <p>Los componentes publican y se suscriben a eventos. Emisor y receptor quedan desacoplados: ninguno necesita conocer la existencia del otro.</p>
           </article>
         </div>
       </div>
 
-      <div class="reveal">
-        <div class="block-label">Modelos fundamentales</div>
-        <div class="grid">
+      <div>
+        <div class="block-label mono reveal">Modelos fundamentales</div>
+        <div class="grid reveal">
           <article class="card">
-            <span class="card-tag">Tiempo</span>
+            <span class="card-idx">Tiempo</span>
             <h3 class="h3">Modelo de interacción</h3>
             <p>Aborda el rendimiento de la comunicación y la dificultad de establecer límites temporales. Distingue sistemas <strong>síncronos</strong> de <strong>asíncronos</strong>.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Fallas</span>
+            <span class="card-idx">Fallas</span>
             <h3 class="h3">Modelo de fallos</h3>
             <p>Especifica qué tipos de falla pueden presentar procesos y canales: <strong>de omisión</strong>, <strong>de temporización</strong> y <strong>arbitrarias</strong> (bizantinas).</p>
           </article>
           <article class="card">
-            <span class="card-tag">Amenazas</span>
+            <span class="card-idx">Amenazas</span>
             <h3 class="h3">Modelo de seguridad</h3>
             <p>Identifica las amenazas sobre los procesos y sobre los canales de comunicación dentro del sistema, y las contramedidas disponibles.</p>
           </article>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="band reveal">
-    <div class="wrap">
-      <div class="block-label">Puntos clave</div>
-      <ul class="klist">
-        <li><span>El modelo arquitectónico define <b>ubicación de componentes</b> e <b>interrelación</b> entre ellos.</span></li>
-        <li><span>Cuatro estilos principales: <b>capas</b>, <b>objetos</b>, <b>centrada en datos</b> y <b>eventos</b>.</span></li>
-        <li><span>Tres modelos fundamentales transversales: <b>interacción</b>, <b>fallos</b> y <b>seguridad</b>.</span></li>
-        <li><span>Variaciones sobre cliente-servidor: <b>particionamiento o replicación</b> de datos, <b>caché</b> en proxies y clientes, y <b>código y agentes móviles</b>.</span></li>
-        <li><span>Los modelos son la herramienta para <b>evaluar</b> desempeño, confiabilidad y escalabilidad antes de construir.</span></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="wrap" style="padding-block:clamp(34px,4.5vw,54px);">
-    <details class="expand reveal">
-      <summary>Contenido ampliado · Requisitos de diseño de una arquitectura distribuida <span class="plus">+</span></summary>
-      <div class="expand-body">
-        <h4>Para qué sirve un modelo arquitectónico</h4>
-        <p>Coulouris, Dollimore y Kindberg definen que un modelo arquitectónico debe considerar la ubicación de los componentes a través de la red y la interrelación entre ellos, es decir, el patrón funcional de comunicación. Estos modelos son útiles al evaluar el desempeño, la confiabilidad, la escalabilidad y otras propiedades del sistema, antes y durante su construcción.</p>
-
-        <h4>Requisitos de diseño</h4>
-        <ul>
-          <li><strong>Desempeño</strong>: latencia de respuesta, throughput y equilibrio de la carga entre nodos.</li>
-          <li><strong>Calidad de servicio</strong>: garantías de tiempo real, ancho de banda y confiabilidad comprometidas con la aplicación.</li>
-          <li><strong>Caché y replicación</strong>: mantener copias cercanas al cliente para reducir latencia, con el costo de tener que mantenerlas consistentes.</li>
-          <li><strong>Confiabilidad (dependability)</strong>: corrección, disponibilidad y tolerancia a fallos del conjunto.</li>
+      <div class="keypoints reveal">
+        <div class="block-label mono">Puntos clave</div>
+        <ul class="klist">
+          <li><span>El modelo arquitectónico define <b>ubicación de componentes</b> e <b>interrelación</b> entre ellos.</span></li>
+          <li><span>Cuatro estilos principales: <b>capas</b>, <b>objetos</b>, <b>centrada en datos</b> y <b>eventos</b>.</span></li>
+          <li><span>Tres modelos fundamentales transversales: <b>interacción</b>, <b>fallos</b> y <b>seguridad</b>.</span></li>
+          <li><span>Variaciones sobre cliente-servidor: <b>particionamiento o replicación</b> de datos en servidores cooperantes, <b>caché</b> en proxies y clientes, y uso de <b>código y agentes móviles</b>.</span></li>
+          <li><span>Los modelos son la herramienta para <b>evaluar</b> desempeño, confiabilidad y escalabilidad antes de construir.</span></li>
         </ul>
-
-        <h4>Arquitectura en tres capas</h4>
-        <p>Separa presentación, lógica de negocio y datos en niveles independientes, cada uno potencialmente alojado en servidores distintos. Es la variación de cliente-servidor más extendida en aplicaciones reales, porque permite escalar cada capa por separado.</p>
-
-        <h4>Micronúcleo (m-kernel)</h4>
-        <p>Los SOD de la última generación separan los servicios de un núcleo mínimo que sólo provee comunicación entre procesos y gestión básica de memoria y planificación. Todo lo demás (sistema de archivos, gestión de red, drivers) corre como procesos servidores en espacio de usuario. Mach, Amoeba y Chorus son los ejemplos canónicos.</p>
       </div>
-    </details>
+
+      <details class="expand reveal">
+        <summary><span class="sq"></span> Contenido ampliado — requisitos de diseño de una arquitectura distribuida
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="expand-body">
+          <h4>Para qué sirve un modelo arquitectónico</h4>
+          <p>Coulouris, Dollimore y Kindberg definen que un modelo arquitectónico debe considerar la ubicación de los componentes a través de la red y la interrelación entre ellos, es decir, el patrón funcional de comunicación. Estos modelos son útiles al evaluar el desempeño, la confiabilidad, la escalabilidad y otras propiedades del sistema, antes y durante su construcción.</p>
+
+          <h4>Requisitos de diseño</h4>
+          <ul>
+            <li><strong>Desempeño</strong>: latencia de respuesta, throughput y equilibrio de la carga entre nodos.</li>
+            <li><strong>Calidad de servicio</strong>: garantías de tiempo real, ancho de banda y confiabilidad comprometidas con la aplicación.</li>
+            <li><strong>Caché y replicación</strong>: mantener copias cercanas al cliente para reducir latencia, con el costo de tener que mantenerlas consistentes.</li>
+            <li><strong>Confiabilidad (dependability)</strong>: corrección, disponibilidad y tolerancia a fallos del conjunto.</li>
+          </ul>
+
+          <h4>Arquitectura en tres capas</h4>
+          <p>Separa presentación, lógica de negocio y datos en niveles independientes, cada uno potencialmente alojado en servidores distintos. Es la variación de cliente-servidor más extendida en aplicaciones reales, porque permite escalar cada capa por separado.</p>
+
+          <h4>Micronúcleo (m-kernel)</h4>
+          <p>Los SOD de la última generación separan los servicios de un núcleo mínimo que sólo provee comunicación entre procesos y gestión básica de memoria y planificación. Todo lo demás (sistema de archivos, gestión de red, drivers) corre como procesos servidores en espacio de usuario. Mach, Amoeba y Chorus son los ejemplos canónicos.</p>
+        </div>
+      </details>
+    </div>
   </div>
 </section>
 
-<!-- ===============================================================
+<!-- ══════════════════════════════════════════════════════════
      TEMA 3
-     =============================================================== -->
+     ══════════════════════════════════════════════════════════ -->
 <section class="section" id="tema3">
   <div class="wrap">
-    <header class="section-head reveal">
-      <span class="section-num">03</span>
-      <div>
-        <span class="section-of">Tema 03 de 06</span>
-        <h2 class="h2">Redes de Interconexión</h2>
-      </div>
-    </header>
+    <div class="section-head reveal">
+      <span class="section-count">Tema 03 / 06</span>
+      <h2 class="h2">Redes de Interconexión</h2>
+      <span class="section-rule"></span>
+    </div>
 
-    <div class="stack">
+    <div class="section-body">
       <p class="lead reveal">Las redes de interconexión son la infraestructura física y lógica sobre la que se apoya cualquier sistema distribuido. La elección de la red no es un detalle de implementación: condiciona directamente el rendimiento, la latencia y la escalabilidad que el sistema podrá alcanzar.</p>
 
-      <div class="reveal">
-        <div class="block-label">Topologías físicas</div>
-        <div class="grid grid-4">
+      <div>
+        <div class="block-label mono reveal">Topologías físicas</div>
+        <div class="grid grid-4 reveal">
 
           <div class="diagram">
             <svg viewBox="0 0 160 100" role="img" aria-label="Topología de bus: cuatro nodos conectados a un canal compartido">
-              <line class="svg-link" x1="12" y1="66" x2="148" y2="66" stroke-width="3"/>
-              <line class="svg-link" x1="12" y1="58" x2="12" y2="74"/>
-              <line class="svg-link" x1="148" y1="58" x2="148" y2="74"/>
-              <line class="svg-link" x1="34" y1="66" x2="34" y2="44"/>
-              <line class="svg-link" x1="68" y1="66" x2="68" y2="44"/>
-              <line class="svg-link" x1="102" y1="66" x2="102" y2="44"/>
-              <line class="svg-link" x1="136" y1="66" x2="136" y2="44"/>
-              <rect class="svg-node" x="26" y="30" width="16" height="14"/>
-              <rect class="svg-node" x="60" y="30" width="16" height="14"/>
-              <rect class="svg-node" x="94" y="30" width="16" height="14"/>
-              <rect class="svg-node" x="128" y="30" width="16" height="14"/>
+              <line class="svg-link" x1="14" y1="64" x2="146" y2="64" stroke-width="2.2"/>
+              <line class="svg-link" x1="14" y1="58" x2="14" y2="70"/>
+              <line class="svg-link" x1="146" y1="58" x2="146" y2="70"/>
+              <line class="svg-link" x1="34" y1="64" x2="34" y2="42"/>
+              <line class="svg-link" x1="68" y1="64" x2="68" y2="42"/>
+              <line class="svg-link" x1="102" y1="64" x2="102" y2="42"/>
+              <line class="svg-link" x1="136" y1="64" x2="136" y2="42"/>
+              <circle class="svg-node" cx="34" cy="35" r="7"/>
+              <circle class="svg-node" cx="68" cy="35" r="7"/>
+              <circle class="svg-node" cx="102" cy="35" r="7"/>
+              <circle class="svg-node" cx="136" cy="35" r="7"/>
             </svg>
             <div class="diagram-name">Bus</div>
             <p class="diagram-desc">Canal único compartido. Económica y fácil de instalar, pero se degrada al crecer y no tolera fallas del medio.</p>
@@ -1456,17 +1432,17 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
 
           <div class="diagram">
             <svg viewBox="0 0 160 100" role="img" aria-label="Topología de estrella: cinco nodos conectados a un dispositivo central">
-              <line class="svg-link" x1="80" y1="52" x2="30" y2="24"/>
-              <line class="svg-link" x1="80" y1="52" x2="130" y2="24"/>
-              <line class="svg-link" x1="80" y1="52" x2="20" y2="76"/>
-              <line class="svg-link" x1="80" y1="52" x2="140" y2="76"/>
-              <line class="svg-link" x1="80" y1="52" x2="80" y2="90"/>
-              <rect class="svg-node" x="22" y="17" width="16" height="14"/>
-              <rect class="svg-node" x="122" y="17" width="16" height="14"/>
-              <rect class="svg-node" x="12" y="69" width="16" height="14"/>
-              <rect class="svg-node" x="132" y="69" width="16" height="14"/>
-              <rect class="svg-node" x="72" y="83" width="16" height="14"/>
-              <rect class="svg-hub" x="66" y="40" width="28" height="24"/>
+              <line class="svg-link" x1="80" y1="52" x2="32" y2="24"/>
+              <line class="svg-link" x1="80" y1="52" x2="128" y2="24"/>
+              <line class="svg-link" x1="80" y1="52" x2="20" y2="72"/>
+              <line class="svg-link" x1="80" y1="52" x2="140" y2="72"/>
+              <line class="svg-link" x1="80" y1="52" x2="80" y2="88"/>
+              <circle class="svg-node" cx="32" cy="24" r="7"/>
+              <circle class="svg-node" cx="128" cy="24" r="7"/>
+              <circle class="svg-node" cx="20" cy="72" r="7"/>
+              <circle class="svg-node" cx="140" cy="72" r="7"/>
+              <circle class="svg-node" cx="80" cy="88" r="7"/>
+              <circle class="svg-hub" cx="80" cy="52" r="11"/>
             </svg>
             <div class="diagram-name">Estrella</div>
             <p class="diagram-desc">Todos los nodos cuelgan de un switch central. Escalable y fácil de diagnosticar, pero depende del nodo central.</p>
@@ -1474,13 +1450,13 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
 
           <div class="diagram">
             <svg viewBox="0 0 160 100" role="img" aria-label="Topología de anillo: seis nodos formando un circuito cerrado">
-              <polygon class="svg-link" points="80,20 111,37 111,71 80,88 49,71 49,37"/>
-              <rect class="svg-node" x="72" y="13" width="16" height="14"/>
-              <rect class="svg-node" x="103" y="30" width="16" height="14"/>
-              <rect class="svg-node" x="103" y="64" width="16" height="14"/>
-              <rect class="svg-node" x="72" y="81" width="16" height="14"/>
-              <rect class="svg-node" x="41" y="64" width="16" height="14"/>
-              <rect class="svg-node" x="41" y="30" width="16" height="14"/>
+              <circle class="svg-link" cx="80" cy="52" r="34"/>
+              <circle class="svg-node" cx="80" cy="18" r="7"/>
+              <circle class="svg-node" cx="109" cy="35" r="7"/>
+              <circle class="svg-node" cx="109" cy="69" r="7"/>
+              <circle class="svg-node" cx="80" cy="86" r="7"/>
+              <circle class="svg-node" cx="51" cy="69" r="7"/>
+              <circle class="svg-node" cx="51" cy="35" r="7"/>
             </svg>
             <div class="diagram-name">Anillo</div>
             <p class="diagram-desc">Cada nodo se conecta a sus dos vecinos formando un circuito cerrado. Es el caso de las redes FDDI.</p>
@@ -1489,20 +1465,20 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
           <div class="diagram">
             <svg viewBox="0 0 160 100" role="img" aria-label="Topología de malla: cinco nodos conectados entre sí por múltiples caminos">
               <line class="svg-link" x1="30" y1="26" x2="130" y2="26"/>
-              <line class="svg-link" x1="30" y1="26" x2="30" y2="78"/>
-              <line class="svg-link" x1="130" y1="26" x2="130" y2="78"/>
-              <line class="svg-link" x1="30" y1="78" x2="130" y2="78"/>
-              <line class="svg-link-soft" x1="30" y1="26" x2="130" y2="78"/>
-              <line class="svg-link-soft" x1="130" y1="26" x2="30" y2="78"/>
-              <line class="svg-link" x1="80" y1="52" x2="30" y2="26"/>
-              <line class="svg-link" x1="80" y1="52" x2="130" y2="26"/>
-              <line class="svg-link" x1="80" y1="52" x2="30" y2="78"/>
-              <line class="svg-link" x1="80" y1="52" x2="130" y2="78"/>
-              <rect class="svg-node" x="22" y="19" width="16" height="14"/>
-              <rect class="svg-node" x="122" y="19" width="16" height="14"/>
-              <rect class="svg-node" x="22" y="71" width="16" height="14"/>
-              <rect class="svg-node" x="122" y="71" width="16" height="14"/>
-              <rect class="svg-hub" x="70" y="44" width="20" height="17"/>
+              <line class="svg-link" x1="30" y1="26" x2="30" y2="80"/>
+              <line class="svg-link" x1="130" y1="26" x2="130" y2="80"/>
+              <line class="svg-link" x1="30" y1="80" x2="130" y2="80"/>
+              <line class="svg-link" x1="30" y1="26" x2="130" y2="80"/>
+              <line class="svg-link" x1="130" y1="26" x2="30" y2="80"/>
+              <line class="svg-link-hi" x1="80" y1="53" x2="30" y2="26"/>
+              <line class="svg-link-hi" x1="80" y1="53" x2="130" y2="26"/>
+              <line class="svg-link-hi" x1="80" y1="53" x2="30" y2="80"/>
+              <line class="svg-link-hi" x1="80" y1="53" x2="130" y2="80"/>
+              <circle class="svg-node" cx="30" cy="26" r="7"/>
+              <circle class="svg-node" cx="130" cy="26" r="7"/>
+              <circle class="svg-node" cx="30" cy="80" r="7"/>
+              <circle class="svg-node" cx="130" cy="80" r="7"/>
+              <circle class="svg-node-alt" cx="80" cy="53" r="7"/>
             </svg>
             <div class="diagram-name">Malla</div>
             <p class="diagram-desc">Múltiples rutas entre nodos: redundancia y tolerancia a fallos, a costa de mayor complejidad y costo.</p>
@@ -1511,19 +1487,19 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
         </div>
       </div>
 
-      <figure class="media reveal">
+      <figure class="media-card reveal">
         <div class="frame" data-img="tema3">
           <div class="pending">
             <span class="pending-k">Imagen · Tema 03</span>
-            <span class="pending-t">Topologías de red</span>
-            <p class="pending-d">Bus, Anillo, Estrella y Malla con su característica distintiva: medio compartido, circuito cerrado, nodo central, múltiples caminos.</p>
+            <span class="pending-t">Infografía de topologías de red</span>
+            <p class="pending-d">Bus, Anillo, Estrella y Malla con su característica distintiva debajo de cada una: medio compartido, circuito cerrado, nodo central, múltiples caminos.</p>
           </div>
         </div>
       </figure>
 
-      <div class="reveal">
-        <div class="block-label">Clasificación por alcance geográfico</div>
-        <div class="table-wrap">
+      <div>
+        <div class="block-label mono reveal">Clasificación por alcance geográfico</div>
+        <div class="table-wrap reveal">
           <table>
             <thead>
               <tr><th>Red</th><th>Alcance</th><th>Característica</th></tr>
@@ -1537,103 +1513,98 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
           </table>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="band reveal">
-    <div class="wrap">
-      <div class="block-label">Puntos clave</div>
-      <ul class="klist">
-        <li><span><b>Dispositivos.</b> Tarjetas de red (NIC), switches, hubs y routers son la base física de la interconexión.</span></li>
-        <li><span><b>Diseño jerárquico.</b> Redes de mayor escala se diseñan en dos o tres capas: acceso, distribución y núcleo.</span></li>
-        <li><span><b>Modelo OSI.</b> Marco de referencia de siete capas para describir la comunicación entre nodos.</span></li>
-        <li><span><b>Arquitectura TCP/IP.</b> Modelo abierto que es la base de Internet y de prácticamente todo sistema distribuido real.</span></li>
-        <li><span><b>Topología híbrida.</b> Combinación de las anteriores; la estrella extendida es la más frecuente en la práctica.</span></li>
-        <li><span><b>Impacto en el diseño.</b> La latencia y el ancho de banda condicionan qué modelo de interacción (síncrono o asíncrono) es viable.</span></li>
-      </ul>
+      <div class="keypoints reveal">
+        <div class="block-label mono">Puntos clave</div>
+        <ul class="klist">
+          <li><span><b>Dispositivos.</b> Tarjetas de red (NIC), switches, hubs y routers son la base física de la interconexión.</span></li>
+          <li><span><b>Diseño jerárquico.</b> Redes de mayor escala se diseñan en dos o tres capas: acceso, distribución y núcleo.</span></li>
+          <li><span><b>Modelo OSI.</b> Marco de referencia de siete capas para describir la comunicación entre nodos.</span></li>
+          <li><span><b>Arquitectura TCP/IP.</b> Modelo abierto que es la base de Internet y de prácticamente todo sistema distribuido real.</span></li>
+          <li><span><b>Topología híbrida.</b> Combinación de las anteriores; la estrella extendida es la más frecuente en la práctica.</span></li>
+          <li><span><b>Impacto en el diseño.</b> La latencia y el ancho de banda de la red condicionan qué modelo de interacción (síncrono o asíncrono) es viable.</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===============================================================
+<!-- ══════════════════════════════════════════════════════════
      TEMA 4
-     =============================================================== -->
-<section class="section alt" id="tema4">
+     ══════════════════════════════════════════════════════════ -->
+<section class="section" id="tema4">
   <div class="wrap">
-    <header class="section-head reveal">
-      <span class="section-num">04</span>
-      <div>
-        <span class="section-of">Tema 04 de 06</span>
-        <h2 class="h2">Cliente-Servidor y Peer to Peer</h2>
-      </div>
-    </header>
+    <div class="section-head reveal">
+      <span class="section-count">Tema 04 / 06</span>
+      <h2 class="h2">Sistemas Cliente-Servidor y Peer to Peer</h2>
+      <span class="section-rule"></span>
+    </div>
 
-    <div class="stack">
+    <div class="section-body">
       <p class="lead reveal">Son los dos modelos arquitectónicos fundamentales según Coulouris. En cliente-servidor los roles están separados y el almacenamiento se centraliza del lado del servidor; en peer-to-peer todos los nodos son equivalentes y cada uno actúa a la vez como cliente y como servidor, aportando y consumiendo recursos.</p>
 
-      <div class="reveal">
-        <div class="block-label">Los dos modelos, lado a lado</div>
-        <div class="grid grid-2">
+      <div class="grid grid-2 reveal">
 
-          <div class="diagram">
-            <svg viewBox="0 0 200 120" role="img" aria-label="Modelo cliente-servidor: tres clientes envían solicitudes a un servidor central">
-              <defs>
-                <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                  <path class="svg-arrow" d="M0 0 L10 5 L0 10 z"/>
-                </marker>
-              </defs>
-              <path class="svg-link" d="M50 26 H100 V56 H140" marker-end="url(#ar)"/>
-              <path class="svg-link" d="M50 60 H140" marker-end="url(#ar)"/>
-              <path class="svg-link" d="M50 94 H100 V64 H140" marker-end="url(#ar)"/>
-              <rect class="svg-node" x="26" y="19" width="22" height="15"/>
-              <rect class="svg-node" x="26" y="53" width="22" height="15"/>
-              <rect class="svg-node" x="26" y="87" width="22" height="15"/>
-              <rect class="svg-hub" x="146" y="36" width="32" height="48"/>
-              <line class="svg-wire" x1="152" y1="48" x2="172" y2="48"/>
-              <line class="svg-wire" x1="152" y1="58" x2="172" y2="58"/>
-              <line class="svg-wire" x1="152" y1="68" x2="172" y2="68"/>
-              <text class="svg-txt" x="20" y="115">CLIENTES</text>
-              <text class="svg-txt" x="140" y="99">SERVIDOR</text>
-            </svg>
-            <div class="diagram-name">Cliente-Servidor</div>
-            <p class="diagram-desc">Los clientes inician la comunicación con una solicitud; el servidor procesa y devuelve una respuesta. La lógica y los datos están centralizados.</p>
-          </div>
-
-          <div class="diagram">
-            <svg viewBox="0 0 200 120" role="img" aria-label="Modelo peer-to-peer: cuatro pares conectados directamente entre sí sin servidor central">
-              <path class="svg-link" d="M66 28 H134" marker-start="url(#ar)" marker-end="url(#ar)"/>
-              <path class="svg-link" d="M66 92 H134" marker-start="url(#ar)" marker-end="url(#ar)"/>
-              <path class="svg-link" d="M54 44 V76" marker-start="url(#ar)" marker-end="url(#ar)"/>
-              <path class="svg-link" d="M146 44 V76" marker-start="url(#ar)" marker-end="url(#ar)"/>
-              <line class="svg-link-soft" x1="66" y1="40" x2="134" y2="80"/>
-              <line class="svg-link-soft" x1="134" y1="40" x2="66" y2="80"/>
-              <rect class="svg-hub" x="42" y="20" width="24" height="16"/>
-              <rect class="svg-hub" x="134" y="20" width="24" height="16"/>
-              <rect class="svg-hub" x="42" y="84" width="24" height="16"/>
-              <rect class="svg-hub" x="134" y="84" width="24" height="16"/>
-              <text class="svg-txt" x="70" y="63">SIN SERVIDOR</text>
-              <text class="svg-txt" x="76" y="73">CENTRAL</text>
-            </svg>
-            <div class="diagram-name">Peer-to-Peer</div>
-            <p class="diagram-desc">Todos los pares son equivalentes: cada uno solicita y ofrece recursos. La capacidad total crece a medida que se suman nodos.</p>
-          </div>
-
+        <div class="diagram">
+          <svg viewBox="0 0 200 120" role="img" aria-label="Modelo cliente-servidor: tres clientes envían solicitudes a un servidor central">
+            <defs>
+              <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#5B8CFF"/>
+              </marker>
+              <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#A472FF"/>
+              </marker>
+            </defs>
+            <line class="svg-link-hi" x1="44" y1="24" x2="138" y2="52" marker-end="url(#ah)"/>
+            <line class="svg-link-hi" x1="44" y1="60" x2="138" y2="60" marker-end="url(#ah)"/>
+            <line class="svg-link-hi" x1="44" y1="96" x2="138" y2="68" marker-end="url(#ah)"/>
+            <circle class="svg-node" cx="34" cy="24" r="9"/>
+            <circle class="svg-node" cx="34" cy="60" r="9"/>
+            <circle class="svg-node" cx="34" cy="96" r="9"/>
+            <rect class="svg-hub" x="148" y="38" width="30" height="44" rx="3"/>
+            <line class="svg-link" x1="154" y1="50" x2="172" y2="50"/>
+            <line class="svg-link" x1="154" y1="60" x2="172" y2="60"/>
+            <line class="svg-link" x1="154" y1="70" x2="172" y2="70"/>
+            <text class="svg-txt" x="22" y="115">CLIENTES</text>
+            <text class="svg-txt" x="141" y="102">SERVIDOR</text>
+          </svg>
+          <div class="diagram-name">Cliente-Servidor</div>
+          <p class="diagram-desc">Los clientes inician la comunicación con una solicitud; el servidor procesa y devuelve una respuesta. La lógica y los datos están centralizados.</p>
         </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 200 120" role="img" aria-label="Modelo peer-to-peer: cuatro pares conectados directamente entre sí sin servidor central">
+            <line class="svg-link-hi" x1="66" y1="30" x2="134" y2="30" marker-start="url(#ah2)" marker-end="url(#ah2)" stroke="#A472FF"/>
+            <line class="svg-link-hi" x1="66" y1="90" x2="134" y2="90" marker-start="url(#ah2)" marker-end="url(#ah2)" stroke="#A472FF"/>
+            <line class="svg-link-hi" x1="54" y1="42" x2="54" y2="78" marker-start="url(#ah2)" marker-end="url(#ah2)" stroke="#A472FF"/>
+            <line class="svg-link-hi" x1="146" y1="42" x2="146" y2="78" marker-start="url(#ah2)" marker-end="url(#ah2)" stroke="#A472FF"/>
+            <line class="svg-link" x1="64" y1="40" x2="136" y2="80" stroke-dasharray="4 3"/>
+            <line class="svg-link" x1="136" y1="40" x2="64" y2="80" stroke-dasharray="4 3"/>
+            <circle class="svg-node-alt" cx="54" cy="30" r="10"/>
+            <circle class="svg-node-alt" cx="146" cy="30" r="10"/>
+            <circle class="svg-node-alt" cx="54" cy="90" r="10"/>
+            <circle class="svg-node-alt" cx="146" cy="90" r="10"/>
+            <text class="svg-txt" x="76" y="62">SIN SERVIDOR CENTRAL</text>
+          </svg>
+          <div class="diagram-name">Peer-to-Peer</div>
+          <p class="diagram-desc">Todos los pares son equivalentes: cada uno solicita y ofrece recursos. La capacidad total crece a medida que se suman nodos.</p>
+        </div>
+
       </div>
 
-      <figure class="media reveal">
+      <figure class="media-card reveal">
         <div class="frame" data-img="tema4">
           <div class="pending">
             <span class="pending-k">Imagen · Tema 04</span>
-            <span class="pending-t">La petición, paso a paso</span>
-            <p class="pending-d">Cliente que envía la solicitud, red que la transporta, servidor que responde. Tres pasos numerados.</p>
+            <span class="pending-t">Cliente-Servidor frente a Peer-to-Peer</span>
+            <p class="pending-d">Composición dividida en dos: a la izquierda, clientes conectados a un servidor central con flechas de solicitud y respuesta; a la derecha, pares conectados directamente entre sí.</p>
           </div>
         </div>
       </figure>
 
-      <div class="reveal">
-        <div class="block-label">Comparación directa</div>
-        <div class="table-wrap">
+      <div>
+        <div class="block-label mono reveal">Comparación directa</div>
+        <div class="table-wrap reveal">
           <table>
             <thead>
               <tr><th>Criterio</th><th><span class="tag-cs">Cliente-Servidor</span></th><th><span class="tag-p2p">Peer-to-Peer</span></th></tr>
@@ -1650,63 +1621,59 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
           </table>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="band reveal">
-    <div class="wrap">
-      <div class="block-label">Puntos clave</div>
-      <ul class="klist">
-        <li><span><b>Petición-respuesta.</b> El patrón de comunicación de cliente-servidor, generalmente sobre TCP/IP; el cliente siempre inicia.</span></li>
-        <li><span><b>Multiservidor.</b> El servicio se reparte entre varios servidores replicados para mejorar rendimiento y disponibilidad.</span></li>
-        <li><span><b>Servidor proxy.</b> Intermediario que agrega caché, seguridad o balanceo de carga entre cliente y servidor.</span></li>
-        <li><span><b>P2P puro (no estructurado).</b> Sin ninguna entidad central; los recursos se localizan por inundación de mensajes.</span></li>
-        <li><span><b>P2P híbrido (centralizado).</b> Un servidor central actúa como directorio para localizar pares, pero no aloja los recursos. Caso histórico: Napster.</span></li>
-        <li><span><b>P2P estructurado.</b> Organiza la red con tablas hash distribuidas (DHT): cada nodo es responsable de una porción del espacio de direcciones.</span></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="wrap" style="padding-block:clamp(34px,4.5vw,54px);">
-    <details class="expand reveal">
-      <summary>Contenido ampliado · Qué dice cada autor <span class="plus">+</span></summary>
-      <div class="expand-body">
-        <h4>Cliente-Servidor</h4>
-        <p>Según <strong>Coulouris et al.</strong>, la arquitectura se compone de un cliente y un servidor: los clientes recuperan datos del servidor, los formatean y los muestran al usuario; el usuario final también puede hacer modificaciones desde el lado del cliente y devolverlas al servidor para hacerlas permanentes. Una característica de diseño estándar de esta arquitectura es la seguridad centralizada.</p>
-        <p>Según <strong>Tanenbaum y Van Steen</strong>, se caracteriza por la centralización del almacenamiento del lado del servidor: un proceso cliente se comunica por medio de la red con un proceso servidor localizado en otra máquina. La arquitectura promueve la modularidad y permite distribuir los componentes entre máquinas distintas, aumentando flexibilidad y desempeño.</p>
-        <p><strong>Stallings</strong> destaca además que esta separación contribuye a mayor seguridad, mantenimiento simplificado y posibilidad de reutilizar los servicios en múltiples aplicaciones.</p>
-
-        <h4>Peer-to-Peer</h4>
-        <p>Coulouris et al. lo presentan como el segundo modelo arquitectónico fundamental. A diferencia del cliente-servidor, adopta enfoques completamente descentralizados donde cada participante contribuye con recursos: almacenamiento y procesamiento.</p>
-        <p>Una definición académica ampliamente citada: <em>peer-to-peer</em> se refiere a una clase de sistemas y aplicaciones que emplean recursos distribuidos para realizar una función crítica de manera descentralizada. Cada nodo es una entidad de red que tiene los roles de servidor y de cliente al mismo tiempo. La misma fuente distingue dos tipos: sistemas de compartición de archivos como Gnutella, Napster y Kazaa, y sistemas orientados a computación intensiva equivalentes a grids computacionales, como SETI@Home y XtremWeb.</p>
-        <p>Tanenbaum y Van Steen clasifican los sistemas P2P como <strong>estructurados</strong>, <strong>no estructurados</strong> y <strong>organizados jerárquicamente</strong>, con BitTorrent como ejemplo de referencia.</p>
-
-        <h4>Por qué el nombre <em>servent</em></h4>
-        <p>En la bibliografía clásica los pares se denominan <em>servents</em>, palabra formada por la contracción de <em>server</em> y <em>client</em>: describe exactamente el hecho de que un mismo nodo cumple los dos papeles simultáneamente.</p>
+      <div class="keypoints reveal">
+        <div class="block-label mono">Puntos clave</div>
+        <ul class="klist">
+          <li><span><b>Petición-respuesta.</b> El patrón de comunicación de cliente-servidor, generalmente sobre TCP/IP; el cliente siempre inicia.</span></li>
+          <li><span><b>Multiservidor.</b> El servicio se reparte entre varios servidores replicados para mejorar rendimiento y disponibilidad.</span></li>
+          <li><span><b>Servidor proxy.</b> Intermediario que agrega caché, seguridad o balanceo de carga entre cliente y servidor.</span></li>
+          <li><span><b>P2P puro (no estructurado).</b> Sin ninguna entidad central; los recursos se localizan por inundación de mensajes.</span></li>
+          <li><span><b>P2P híbrido (centralizado).</b> Un servidor central actúa como directorio para localizar pares, pero no aloja los recursos. Caso histórico: Napster.</span></li>
+          <li><span><b>P2P estructurado.</b> Organiza la red con tablas hash distribuidas (DHT): cada nodo es responsable de una porción del espacio de direcciones.</span></li>
+        </ul>
       </div>
-    </details>
+
+      <details class="expand reveal">
+        <summary><span class="sq"></span> Contenido ampliado — qué dice cada autor
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="expand-body">
+          <h4>Cliente-Servidor</h4>
+          <p>Según <strong>Coulouris et al.</strong>, la arquitectura se compone de un cliente y un servidor: los clientes recuperan datos del servidor, los formatean y los muestran al usuario; el usuario final también puede hacer modificaciones desde el lado del cliente y devolverlas al servidor para hacerlas permanentes. Una característica de diseño estándar de esta arquitectura es la seguridad centralizada.</p>
+          <p>Según <strong>Tanenbaum y Van Steen</strong>, se caracteriza por la centralización del almacenamiento del lado del servidor: un proceso cliente se comunica por medio de la red con un proceso servidor localizado en otra máquina. La arquitectura promueve la modularidad y permite distribuir los componentes entre máquinas distintas, aumentando flexibilidad y desempeño.</p>
+          <p><strong>Stallings</strong> destaca además que esta separación contribuye a mayor seguridad, mantenimiento simplificado y posibilidad de reutilizar los servicios en múltiples aplicaciones.</p>
+
+          <h4>Peer-to-Peer</h4>
+          <p>Coulouris et al. lo presentan como el segundo modelo arquitectónico fundamental. A diferencia del cliente-servidor, adopta enfoques completamente descentralizados donde cada participante contribuye con recursos: almacenamiento y procesamiento.</p>
+          <p>Una definición académica ampliamente citada: <em>peer-to-peer</em> se refiere a una clase de sistemas y aplicaciones que emplean recursos distribuidos para realizar una función crítica de manera descentralizada. Cada nodo es una entidad de red que tiene los roles de servidor y de cliente al mismo tiempo. La misma fuente distingue dos tipos: sistemas de compartición de archivos como Gnutella, Napster y Kazaa, y sistemas orientados a computación intensiva equivalentes a grids computacionales, como SETI@Home y XtremWeb.</p>
+          <p>Tanenbaum y Van Steen clasifican los sistemas P2P como <strong>estructurados</strong>, <strong>no estructurados</strong> y <strong>organizados jerárquicamente</strong>, con BitTorrent como ejemplo de referencia.</p>
+
+          <h4>Por qué el nombre <em>servent</em></h4>
+          <p>En la bibliografía clásica los pares se denominan <em>servents</em>, palabra formada por la contracción de <em>server</em> y <em>client</em>: describe exactamente el hecho de que un mismo nodo cumple los dos papeles simultáneamente.</p>
+        </div>
+      </details>
+    </div>
   </div>
 </section>
 
-<!-- ===============================================================
+<!-- ══════════════════════════════════════════════════════════
      TEMA 5
-     =============================================================== -->
+     ══════════════════════════════════════════════════════════ -->
 <section class="section" id="tema5">
   <div class="wrap">
-    <header class="section-head reveal">
-      <span class="section-num">05</span>
-      <div>
-        <span class="section-of">Tema 05 de 06</span>
-        <h2 class="h2">Características Clave de Diseño</h2>
-      </div>
-    </header>
+    <div class="section-head reveal">
+      <span class="section-count">Tema 05 / 06</span>
+      <h2 class="h2">Características Clave de Diseño</h2>
+      <span class="section-rule"></span>
+    </div>
 
-    <div class="stack">
+    <div class="section-body">
       <p class="lead reveal">Son los desafíos que todo sistema distribuido debe resolver, y a la vez los criterios con los que se lo evalúa. La transparencia es la más característica: ocultar la separación física de los componentes para que el sistema se perciba como un todo único. La bibliografía reconoce ocho tipos.</p>
 
-      <div class="reveal">
-        <div class="block-label">Los ocho tipos de transparencia</div>
-        <div class="grid grid-4">
+      <div>
+        <div class="block-label mono reveal">Los ocho tipos de transparencia</div>
+        <div class="grid grid-4 reveal">
           <article class="card"><h3 class="h3">De acceso</h3><p>Los recursos locales y remotos se manipulan con las mismas operaciones.</p></article>
           <article class="card"><h3 class="h3">De ubicación</h3><p>Se accede a un recurso sin necesidad de conocer su localización física.</p></article>
           <article class="card"><h3 class="h3">De concurrencia</h3><p>Varios procesos operan sobre recursos compartidos sin interferirse entre sí.</p></article>
@@ -1718,148 +1685,144 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
         </div>
       </div>
 
-      <figure class="media reveal">
+      <figure class="media-card reveal">
         <div class="frame" data-img="tema5">
           <div class="pending">
             <span class="pending-k">Imagen · Tema 05</span>
-            <span class="pending-t">Transparencia, escala y fallos</span>
-            <p class="pending-d">Un usuario que ve un solo sistema, un nodo nuevo incorporándose, y un nodo caído mientras los demás siguen.</p>
+            <span class="pending-t">Transparencia, escalabilidad y tolerancia a fallos</span>
+            <p class="pending-d">Un usuario que ve un único sistema aunque haya varios nodos; un nodo nuevo incorporándose; un nodo desconectado mientras los demás siguen funcionando.</p>
           </div>
         </div>
       </figure>
 
-      <div class="reveal">
-        <div class="block-label">Las demás características</div>
-        <div class="grid">
+      <div>
+        <div class="block-label mono reveal">Las demás características</div>
+        <div class="grid reveal">
           <article class="card">
-            <span class="card-tag">Apertura</span>
+            <span class="card-idx">Apertura</span>
             <h3 class="h3">Openness</h3>
             <p>El sistema se especifica mediante <strong>interfaces publicadas</strong> y estándares de interoperabilidad, de modo que componentes de distintos fabricantes se integren y el sistema pueda extenderse o reimplementarse parcialmente.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Escala</span>
+            <span class="card-idx">Escala</span>
             <h3 class="h3">Escalabilidad</h3>
             <p>Mantener la eficacia ante el crecimiento del número de recursos y usuarios, <strong>sin rediseñar</strong> la estructura del sistema ni sus algoritmos.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Fallos</span>
+            <span class="card-idx">Fallos</span>
             <h3 class="h3">Tolerancia a fallos</h3>
             <p>Continuar operando, total o parcialmente, ante fallas de nodos, procesos o red. Se apoya en <strong>redundancia</strong> de componentes y en mecanismos de recuperación posterior al fallo.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Concurrencia</span>
-            <h3 class="h3">Acceso simultáneo</h3>
-            <p>Múltiples clientes acceden a la vez a un recurso compartido. Se resuelve con técnicas de control de concurrencia (semáforos, bloqueos, hilos) que garantizan consistencia.</p>
+            <span class="card-idx">Concurr.</span>
+            <h3 class="h3">Concurrencia</h3>
+            <p>Múltiples clientes acceden simultáneamente a un recurso compartido. Se resuelve con técnicas de control de concurrencia (semáforos, bloqueos, hilos) que garantizan consistencia.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Heterogeneidad</span>
-            <h3 class="h3">Todo convive</h3>
+            <span class="card-idx">Hetero.</span>
+            <h3 class="h3">Heterogeneidad</h3>
             <p>Soportar redes, hardware, sistemas operativos y lenguajes diferentes dentro del mismo sistema. Se resuelve habitualmente con <strong>middleware</strong> y protocolos estándar.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Seguridad</span>
-            <h3 class="h3">Canales inseguros</h3>
-            <p>Autenticación de usuarios y procesos, autorización de acceso a recursos y protección de la confidencialidad e integridad de los datos que viajan por la red.</p>
+            <span class="card-idx">Segur.</span>
+            <h3 class="h3">Seguridad</h3>
+            <p>Autenticación de usuarios y procesos, autorización de acceso a recursos y protección de la confidencialidad e integridad de los datos que viajan por canales inseguros.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Reloj</span>
+            <span class="card-idx">Reloj</span>
             <h3 class="h3">Sin reloj ni estado global</h3>
             <p>A diferencia de un sistema centralizado, un SOD carece de memoria compartida y de un reloj único. Obliga a usar <strong>relojes lógicos</strong> y algoritmos distribuidos de coordinación.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Recursos</span>
-            <h3 class="h3">Compartición</h3>
+            <span class="card-idx">Recursos</span>
+            <h3 class="h3">Compartición de recursos</h3>
             <p>Hardware, datos y servicios accesibles desde cualquier nodo del sistema. Es la razón de ser de toda la arquitectura.</p>
           </article>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="band reveal">
-    <div class="wrap">
-      <div class="block-label">Puntos clave</div>
-      <ul class="klist">
-        <li><span><b>Transparencia</b> es el objetivo transversal: el usuario y el programador no deberían percibir la distribución.</span></li>
-        <li><span>La <b>ausencia de reloj global</b> es la diferencia estructural más profunda con un sistema centralizado.</span></li>
-        <li><span>Sin reloj ni estado global se necesitan <b>relojes lógicos</b>, <b>exclusión mutua distribuida</b> y <b>elección de coordinador</b>.</span></li>
-        <li><span>Tanenbaum y Van Steen resumen las metas en: compartición de recursos, transparencia, apertura, confiabilidad, seguridad y escalabilidad.</span></li>
-        <li><span>La <b>tolerancia a fallos</b> no significa no fallar: significa seguir dando servicio, aunque sea con funcionalidad reducida.</span></li>
-      </ul>
+      <div class="keypoints reveal">
+        <div class="block-label mono">Puntos clave</div>
+        <ul class="klist">
+          <li><span><b>Transparencia</b> es el objetivo transversal: el usuario y el programador no deberían percibir la distribución.</span></li>
+          <li><span>La <b>ausencia de reloj global</b> es la diferencia estructural más profunda con un sistema centralizado.</span></li>
+          <li><span>Sin reloj ni estado global se necesitan <b>relojes lógicos</b>, <b>exclusión mutua distribuida</b> y <b>elección de coordinador</b>.</span></li>
+          <li><span>Tanenbaum y Van Steen resumen las metas en: compartición de recursos, transparencia de distribución, apertura, confiabilidad, seguridad y escalabilidad.</span></li>
+          <li><span>La <b>tolerancia a fallos</b> no significa no fallar: significa seguir dando servicio, aunque sea con funcionalidad reducida.</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===============================================================
+<!-- ══════════════════════════════════════════════════════════
      TEMA 6
-     =============================================================== -->
-<section class="section alt" id="tema6">
+     ══════════════════════════════════════════════════════════ -->
+<section class="section" id="tema6">
   <div class="wrap">
-    <header class="section-head reveal">
-      <span class="section-num">06</span>
-      <div>
-        <span class="section-of">Tema 06 de 06</span>
-        <h2 class="h2">Funciones y Servicios</h2>
-      </div>
-    </header>
+    <div class="section-head reveal">
+      <span class="section-count">Tema 06 / 06</span>
+      <h2 class="h2">Funciones y Servicios</h2>
+      <span class="section-rule"></span>
+    </div>
 
-    <div class="stack">
+    <div class="section-body">
       <p class="lead reveal">Un SOD cumple las mismas funciones que un sistema operativo tradicional, pero coordinadas entre múltiples nodos y sin memoria ni reloj compartidos. Esas funciones se traducen en servicios concretos que el sistema ofrece a las aplicaciones, y persiguen un conjunto de objetivos de diseño explícitos.</p>
 
-      <div class="reveal">
-        <div class="block-label">Funciones del sistema</div>
-        <div class="grid">
+      <div>
+        <div class="block-label mono reveal">Funciones del sistema</div>
+        <div class="grid reveal">
           <article class="card">
-            <span class="card-tag">CPU</span>
+            <span class="card-idx">CPU</span>
             <h3 class="h3">Gestión de procesos y procesadores</h3>
             <p>Creación, planificación (<em>scheduling</em>) y migración de procesos entre nodos, con balanceo de carga.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Memoria</span>
+            <span class="card-idx">Memoria</span>
             <h3 class="h3">Gestión de memoria</h3>
             <p>En algunos modelos, memoria compartida distribuida (DSM); en otros, memoria estrictamente local por nodo.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Archivos</span>
+            <span class="card-idx">Archivos</span>
             <h3 class="h3">Gestión de archivos</h3>
             <p>Sistemas de archivos distribuidos, como NFS, que permiten acceso remoto transparente.</p>
           </article>
           <article class="card">
-            <span class="card-tag">IPC</span>
+            <span class="card-idx">IPC</span>
             <h3 class="h3">Comunicación entre procesos</h3>
             <p>Paso de mensajes, invocación remota de procedimientos (RPC) o de métodos (RMI), y sockets.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Reloj</span>
+            <span class="card-idx">Reloj</span>
             <h3 class="h3">Sincronización y coordinación</h3>
             <p>Exclusión mutua distribuida, elección de coordinador y relojes lógicos, ante la ausencia de un reloj y una memoria globales.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Acceso</span>
+            <span class="card-idx">Acceso</span>
             <h3 class="h3">Gestión de la seguridad</h3>
             <p>Autenticación, autorización y protección de la comunicación en un entorno sin control físico centralizado.</p>
           </article>
           <article class="card">
-            <span class="card-tag">Redundancia</span>
-            <h3 class="h3">Tolerancia a fallos</h3>
+            <span class="card-idx">Redundancia</span>
+            <h3 class="h3">Tolerancia a fallos y recuperación</h3>
             <p>Detección de caídas de nodos o de red, y mecanismos de redundancia para mantener el servicio activo.</p>
           </article>
         </div>
       </div>
 
-      <figure class="media reveal">
+      <figure class="media-card reveal">
         <div class="frame" data-img="tema6">
           <div class="pending">
             <span class="pending-k">Imagen · Tema 06</span>
-            <span class="pending-t">Un usuario, muchos nodos</span>
-            <p class="pending-d">El usuario percibe un único sistema mientras detrás varias computadoras trabajan coordinadamente.</p>
+            <span class="pending-t">Servicios y objetivos del sistema</span>
+            <p class="pending-d">Un usuario interactuando con un sistema distribuido: percibe un solo sistema mientras detrás varias computadoras trabajan coordinadamente.</p>
           </div>
         </div>
       </figure>
 
-      <div class="reveal">
-        <div class="block-label">Objetivos de diseño · Coulouris, Dollimore y Kindberg</div>
-        <div class="table-wrap">
+      <div>
+        <div class="block-label mono reveal">Objetivos de diseño · Coulouris, Dollimore y Kindberg</div>
+        <div class="table-wrap reveal">
           <table>
             <thead>
               <tr><th>Objetivo</th><th>Qué persigue</th></tr>
@@ -1875,88 +1838,86 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
           </table>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="band reveal">
-    <div class="wrap">
-      <div class="block-label">Servicios concretos que ofrece el SOD</div>
-      <ul class="klist">
-        <li><span><b>Servicio de nombrado.</b> Traduce nombres lógicos a ubicaciones físicas; es lo que hace posible la transparencia de ubicación.</span></li>
-        <li><span><b>Servicio de comunicación.</b> Mensajería, RPC y RMI: el mecanismo por el que los nodos se hablan.</span></li>
-        <li><span><b>Sincronización de tiempo.</b> Ordena eventos entre nodos que no comparten un reloj físico.</span></li>
-        <li><span><b>Servicio de seguridad.</b> Autenticación, autorización y cifrado de los canales.</span></li>
-        <li><span><b>Archivos distribuidos.</b> Acceso remoto a archivos como si fueran locales.</span></li>
-        <li><span><b>Gestión de transacciones.</b> Garantiza atomicidad y consistencia cuando una operación toca varios nodos.</span></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="wrap" style="padding-block:clamp(34px,4.5vw,54px);">
-    <details class="expand reveal">
-      <summary>Contenido ampliado · Hacia dónde sigue el eje <span class="plus">+</span></summary>
-      <div class="expand-body">
-        <h4>Comunicación en los sistemas distribuidos</h4>
-        <p>El eje continúa con los mecanismos concretos de comunicación entre procesos: memoria compartida, pasaje de mensajes, protocolos de comunicaciones, llamadas a procedimiento remoto (RPC) y sockets. Es la implementación técnica de la comunicación entre procesos.</p>
-
-        <h4>Sincronización en los sistemas distribuidos</h4>
-        <p>Sincronización de eventos, tiempos y estados de procesos; relojes físicos y lógicos; exclusión mutua distribuida; coordinación y consenso; transacciones y control de concurrencia; transacciones atómicas y bloqueos. Todo esto existe porque no hay reloj global: la característica de diseño desarrollada en el Tema 05.</p>
-
-        <h4>Por qué el orden importa</h4>
-        <p>Las funciones de este tema no son una lista de prestaciones: cada una responde a una restricción física impuesta por la distribución. Sin memoria compartida hace falta paso de mensajes; sin reloj común hace falta sincronización lógica; sin control físico centralizado hace falta seguridad distribuida. El eje entero se lee de atrás para adelante desde ahí.</p>
+      <div class="keypoints reveal">
+        <div class="block-label mono">Servicios concretos que ofrece el SOD</div>
+        <ul class="klist">
+          <li><span><b>Servicio de nombrado.</b> Traduce nombres lógicos a ubicaciones físicas; es lo que hace posible la transparencia de ubicación.</span></li>
+          <li><span><b>Servicio de comunicación.</b> Mensajería, RPC y RMI: el mecanismo por el que los nodos se hablan.</span></li>
+          <li><span><b>Servicio de sincronización de tiempo.</b> Ordena eventos entre nodos que no comparten un reloj físico.</span></li>
+          <li><span><b>Servicio de seguridad.</b> Autenticación, autorización y cifrado de los canales.</span></li>
+          <li><span><b>Servicio de archivos distribuidos.</b> Acceso remoto a archivos como si fueran locales.</span></li>
+          <li><span><b>Gestión de transacciones.</b> Garantiza atomicidad y consistencia cuando una operación toca varios nodos.</span></li>
+        </ul>
       </div>
-    </details>
+
+      <details class="expand reveal">
+        <summary><span class="sq"></span> Contenido ampliado — hacia dónde sigue el eje
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="expand-body">
+          <h4>Comunicación en los sistemas distribuidos</h4>
+          <p>El eje continúa con los mecanismos concretos de comunicación entre procesos: memoria compartida, pasaje de mensajes, protocolos de comunicaciones, llamadas a procedimiento remoto (RPC) y sockets. Es la implementación técnica de la función F4.</p>
+
+          <h4>Sincronización en los sistemas distribuidos</h4>
+          <p>Sincronización de eventos, tiempos y estados de procesos; relojes físicos y lógicos; exclusión mutua distribuida; coordinación y consenso; transacciones y control de concurrencia; transacciones atómicas y bloqueos. Todo esto existe porque no hay reloj global: la característica de diseño desarrollada en el Tema 05.</p>
+
+          <h4>Por qué el orden importa</h4>
+          <p>Las funciones del Tema 06 no son una lista de features: cada una responde a una restricción física impuesta por la distribución. Sin memoria compartida hace falta paso de mensajes; sin reloj común hace falta sincronización lógica; sin control físico centralizado hace falta seguridad distribuida. El eje entero se lee de atrás para adelante desde ahí.</p>
+        </div>
+      </details>
+    </div>
   </div>
 </section>
 
-<!-- ===============================================================
+<!-- ══════════════════════════════════════════════════════════
      CIERRE
-     =============================================================== -->
-<section class="section section-invert" id="cierre">
+     ══════════════════════════════════════════════════════════ -->
+<section class="section" id="cierre">
   <div class="wrap">
-    <header class="section-head reveal">
-      <span class="section-num">07</span>
-      <div>
-        <span class="section-of">Síntesis</span>
-        <h2 class="h2">Todo el sistema funcionando</h2>
-      </div>
-    </header>
+    <div class="section-head reveal">
+      <span class="section-count">Síntesis</span>
+      <h2 class="h2">Todo el sistema funcionando</h2>
+      <span class="section-rule"></span>
+    </div>
 
-    <div class="stack">
-      <figure class="media reveal">
+    <div class="section-body">
+      <figure class="media-card reveal">
         <div class="frame" data-img="cierre">
           <div class="pending">
             <span class="pending-k">Imagen de cierre</span>
-            <span class="pending-t">Resumen visual del eje</span>
-            <p class="pending-d">Cliente-servidor y peer-to-peer conviviendo, un nodo que cae mientras los demás siguen, y uno nuevo incorporándose.</p>
+            <span class="pending-t">Resumen visual del eje completo</span>
+            <p class="pending-d">Un grupo funcionando en cliente-servidor, otro en peer-to-peer, nodos colaborando, uno que falla mientras los demás siguen, y uno nuevo incorporándose.</p>
           </div>
         </div>
         <figcaption>El eje completo en una sola escena: arquitecturas conviviendo, recursos compartidos, tolerancia a fallos y escalabilidad.</figcaption>
       </figure>
 
       <div class="reveal">
-        <div class="block-label">Bibliografía y fuentes</div>
+        <div class="block-label mono">Bibliografía y fuentes</div>
         <ol class="biblio">
-          <li><span><b>Tanenbaum, A. S.</b> · <em>Sistemas Operativos Distribuidos</em>. Prentice-Hall (versión en castellano de <em>Distributed Operating Systems</em>, 1995).</span></li>
-          <li><span><b>Tanenbaum, A. S. y Van Steen, M.</b> · <em>Sistemas Distribuidos: Principios y Paradigmas</em>. Prentice-Hall, 2.ª edición.<span class="src">Edición en inglés disponible en abierto: Distributed Systems: Principles and Paradigms, 3.ª ed.</span></span></li>
-          <li><span><b>Coulouris, G.; Dollimore, J.; Kindberg, T.; Blair, G.</b> · <em>Sistemas Distribuidos: Conceptos y Diseño</em>. Addison-Wesley, 5.ª edición.</span></li>
-          <li><span><b>Silberschatz, A.; Galvin, P.; Gagne, G.</b> · <em>Fundamentos de Sistemas Operativos</em> (capítulos sobre sistemas distribuidos).</span></li>
-          <li><span><b>Stallings, W.</b> · <em>Operating Systems: Internals and Design Principles</em>.</span></li>
-          <li><span><b>Chow, R.; Johnson, T.</b> · <em>Distributed Operating Systems &amp; Algorithms</em>. Addison-Wesley, 1997.</span></li>
-          <li><span><b>Galli, D. L.</b> · <em>Distributed Operating Systems: Concepts &amp; Practice</em>. Prentice-Hall, 2000.</span></li>
-          <li><span><b>Universidad Nacional del Sur</b> · Material de cátedra de Sistemas Distribuidos: introducción, conceptos y sistemas peer-to-peer.<span class="src">cs.uns.edu.ar</span></span></li>
-          <li><span><b>Universidad Politécnica de Madrid</b> · Material de cátedra: introducción a los SOD y arquitecturas.<span class="src">laurel.datsi.fi.upm.es</span></span></li>
-          <li><span><b>Universidad Autónoma Metropolitana, Azcapotzalco</b> · «Arquitecturas de los sistemas distribuidos».<span class="src">aisii.azc.uam.mx</span></span></li>
-          <li><span><b>Universidad Politécnica de Cartagena</b> · «TEMA 1: Introducción a las arquitecturas distribuidas».<span class="src">ocw.bib.upct.es</span></span></li>
-          <li><span><b>Facultat d'Informàtica de Barcelona · UPC</b> · Ficha de la asignatura Sistemas Distribuidos: desafíos de diseño y arquitecturas.<span class="src">fib.upc.edu</span></span></li>
-          <li><span><b>Universitat Oberta de Catalunya</b> · «Arquitecturas, paradigmas y aplicaciones de los sistemas distribuidos».</span></li>
-          <li><span><b>Arroyo Pérez, C. D.</b> · <em>Sistemas Distribuidos: Concepto y Fundamentos</em>. ResearchGate.</span></li>
-          <li><span><b>Cisco Networking Academy (CCNA)</b> · Documentación sobre topologías y diseño jerárquico de redes.</span></li>
+          <li><span><b>Tanenbaum, A. S.</b> — <em>Sistemas Operativos Distribuidos</em>. Prentice-Hall (versión en castellano de <em>Distributed Operating Systems</em>, 1995).</span></li>
+          <li><span><b>Tanenbaum, A. S. y Van Steen, M.</b> — <em>Sistemas Distribuidos: Principios y Paradigmas</em>. Prentice-Hall, 2.ª edición.<span class="src">Edición en inglés disponible en abierto: Distributed Systems: Principles and Paradigms, 3.ª ed.</span></span></li>
+          <li><span><b>Coulouris, G.; Dollimore, J.; Kindberg, T.; Blair, G.</b> — <em>Sistemas Distribuidos: Conceptos y Diseño</em>. Addison-Wesley, 5.ª edición.</span></li>
+          <li><span><b>Silberschatz, A.; Galvin, P.; Gagne, G.</b> — <em>Fundamentos de Sistemas Operativos</em> (capítulos sobre sistemas distribuidos).</span></li>
+          <li><span><b>Stallings, W.</b> — <em>Operating Systems: Internals and Design Principles</em>.</span></li>
+          <li><span><b>Chow, R.; Johnson, T.</b> — <em>Distributed Operating Systems &amp; Algorithms</em>. Addison-Wesley, 1997.</span></li>
+          <li><span><b>Galli, D. L.</b> — <em>Distributed Operating Systems: Concepts &amp; Practice</em>. Prentice-Hall, 2000.</span></li>
+          <li><span><b>Universidad Nacional del Sur</b> — Material de cátedra de Sistemas Distribuidos: introducción, conceptos y sistemas peer-to-peer.<span class="src">cs.uns.edu.ar</span></span></li>
+          <li><span><b>Universidad Politécnica de Madrid</b> — Material de cátedra: introducción a los SOD y arquitecturas.<span class="src">laurel.datsi.fi.upm.es</span></span></li>
+          <li><span><b>Universidad Autónoma Metropolitana, Azcapotzalco</b> — «Arquitecturas de los sistemas distribuidos».<span class="src">aisii.azc.uam.mx</span></span></li>
+          <li><span><b>Universidad Politécnica de Cartagena</b> — «TEMA 1: Introducción a las arquitecturas distribuidas».<span class="src">ocw.bib.upct.es</span></span></li>
+          <li><span><b>Facultat d'Informàtica de Barcelona — UPC</b> — Ficha de la asignatura Sistemas Distribuidos: desafíos de diseño y arquitecturas.<span class="src">fib.upc.edu</span></span></li>
+          <li><span><b>Universitat Oberta de Catalunya</b> — «Arquitecturas, paradigmas y aplicaciones de los sistemas distribuidos».</span></li>
+          <li><span><b>Arroyo Pérez, C. D.</b> — <em>Sistemas Distribuidos: Concepto y Fundamentos</em>. ResearchGate.</span></li>
+          <li><span><b>Cisco Networking Academy (CCNA)</b> — Documentación sobre topologías y diseño jerárquico de redes.</span></li>
         </ol>
       </div>
 
       <details class="expand reveal">
-        <summary>Nota metodológica <span class="plus">+</span></summary>
+        <summary><span class="sq"></span> Nota metodológica
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
         <div class="expand-body">
           <p>Este material integra y sintetiza el contenido de los libros de cátedra citados junto con material de cursos universitarios disponible públicamente. Distintos programas pueden enfatizar autores o clasificaciones diferentes dentro de esta bibliografía estándar, por lo que se recomienda contrastarlo con el material específico entregado por la cátedra.</p>
         </div>
@@ -1969,75 +1930,83 @@ details.expand[open] > summary .plus{ transform:rotate(45deg); color:var(--acid)
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <div>
-      <div class="footer-mark">Eje 01</div>
-      <p class="footer-note" style="margin-top:14px;">Fundamentos de los<br>Sistemas Operativos Distribuidos</p>
-    </div>
     <div class="footer-note">
-      <b>Trabajo Práctico N.º 1</b><br>
-      Agosto 2026<br>
-      Sistemas Operativos Distribuidos
+      <b>Trabajo Práctico N.º 1</b> · Agosto 2026<br>
+      Sistemas Operativos Distribuidos<br>
+      Eje Temático 1 — Fundamentos
     </div>
     <div class="footer-note" id="footer-integrantes"></div>
   </div>
 </footer>
 
 <button class="to-top" id="to-top" type="button" aria-label="Volver arriba">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
 </button>
 
 <script>
-/* ===============================================================
-   CONFIGURACION - ES LO UNICO QUE HAY QUE TOCAR
-   =============================================================== */
+/* ═══════════════════════════════════════════════════════════════
+   ⚙️  CONFIGURACIÓN — ES LO ÚNICO QUE TENÉS QUE TOCAR
+   ═══════════════════════════════════════════════════════════════ */
 const CONFIG = {
 
   /* Nombres que aparecen en la portada y en el pie */
   integrantes: ["Facundo Salazar"],
 
-  /* --- PODCAST ------------------------------------------------
-     Opcion A (recomendada): URL directa a un archivo .mp3
-       src: "audio/podcast.mp3"   (si esta en el repo)
-       src: "https://mi-servidor.com/podcast.mp3"
-     Opcion B: si solo lo tenes en Google Drive, pega el ID acá.
-       El ID esta en la URL: drive.google.com/file/d/ESTE_ID/view
-     Dejalos vacios y queda el estado "pendiente". */
+  /* ── PODCAST ──────────────────────────────────────────────────
+     Opción A (recomendada): subí el archivo a la carpeta audio/
+       del repo y poné la ruta:
+       src: "audio/podcast.m4a"
+     Opción B: si sólo lo tenés en Google Drive, pegá el ID del
+       archivo acá y se muestra el reproductor de Drive.
+       El ID está en la URL: drive.google.com/file/d/ESTE_ID/view
+     Dejá ambos vacíos y queda el estado "pendiente". */
   podcast: {
-    src:      "",
+    src:      "audio/podcast.m4a",
     driveId:  "",
     titulo:   "Introducción a los Sistemas Operativos Distribuidos",
-    duracion: "2 min"
+    duracion: "1:49"
   },
 
-  /* --- VIDEO GENERAL ------------------------------------------
-     Acepta cualquiera de estos formatos y los convierte solo:
-       https://www.youtube.com/watch?v=XXXXXXXXXXX
-       https://youtu.be/XXXXXXXXXXX
-       https://drive.google.com/file/d/ID/view              */
+  /* ── VIDEO GENERAL ────────────────────────────────────────────
+     Opción A: archivos propios en la carpeta video/. Si hay más de
+       uno aparece un selector de partes y se encadenan solos.
+     Opción B: si preferís YouTube, vaciá "partes" y pegá el link
+       en "url". Acepta cualquiera de estos formatos:
+         https://www.youtube.com/watch?v=XXXXXXXXXXX
+         https://youtu.be/XXXXXXXXXXX
+         https://drive.google.com/file/d/ID/view              */
   video: {
-    url:      "",
-    duracion: "5 min"
+    duracion: "6:43 · 3 partes",
+    partes: [
+      { titulo: "Parte 1", src: "video/parte-1.mp4", duracion: "3:37" },
+      { titulo: "Parte 2", src: "video/parte-2.mp4", duracion: "1:46" },
+      { titulo: "Parte 3", src: "video/parte-3.mp4", duracion: "1:20" }
+    ],
+    url: ""
   },
 
-  /* --- IMAGENES -----------------------------------------------
-     Si estan en el repo:  "img/tema1.png"
-     Si estan en Drive:    "https://lh3.googleusercontent.com/d/ID"
-     Las que queden vacias siguen mostrando el hueco reservado. */
+  /* ── IMÁGENES ─────────────────────────────────────────────────
+     Subilas a la carpeta img/ del repo y poné la ruta:
+       tema1: "img/tema1.jpeg"
+     Las que dejes vacías siguen mostrando el recuadro de
+     "espacio reservado".
+     Si preferís Google Drive: compartí como "cualquiera con el
+     enlace" y usá  https://lh3.googleusercontent.com/d/ID  */
   imagenes: {
-    mapaMental: "",
-    tema1:      "",
-    tema2:      "",
-    tema3:      "",
-    tema4:      "",
-    tema5:      "",
-    tema6:      "",
-    cierre:     ""
+    mapaMental: "img/mapa-mental.jpeg",
+    tema1:      "img/tema1.jpeg",
+    tema2:      "img/tema2.jpeg",
+    tema3:      "img/tema3.jpeg",
+    tema4:      "img/tema4.jpeg",
+    tema5:      "img/tema5.jpeg",
+    tema6:      "img/tema6.jpeg",
+    cierre:     "img/cierre.jpeg"
   }
 };
 
-/* ===============================================================
-   A partir de aca no hace falta tocar nada.
-   =============================================================== */
+/* ═══════════════════════════════════════════════════════════════
+   A partir de acá no hace falta tocar nada.
+   ═══════════════════════════════════════════════════════════════ */
 (function () {
   "use strict";
 
@@ -2045,25 +2014,22 @@ const CONFIG = {
   const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* --- Integrantes y duraciones ------------------------------- */
-  (function meta() {
+  /* ── Integrantes ──────────────────────────────────────────── */
+  (function integrantes() {
+    const cp = $("#chip-podcast");
+    if (cp && CONFIG.podcast && CONFIG.podcast.duracion) cp.textContent = CONFIG.podcast.duracion;
+    const cv = $("#chip-video");
+    if (cv && CONFIG.video && CONFIG.video.duracion) cv.textContent = CONFIG.video.duracion;
+
     const nombres = (CONFIG.integrantes || []).filter(Boolean);
-    if (nombres.length) {
-      const cell = $("#cell-integrantes");
-      if (cell) cell.textContent = nombres.length === 1 ? nombres[0] : nombres.length + " integrantes";
-      const foot = $("#footer-integrantes");
-      if (foot) foot.innerHTML = "<b>Integrantes</b><br>" + nombres.join("<br>");
-    }
-    if (CONFIG.podcast && CONFIG.podcast.duracion) {
-      const c = $("#cell-podcast"); if (c) c.textContent = CONFIG.podcast.duracion;
-    }
-    if (CONFIG.video && CONFIG.video.duracion) {
-      const c = $("#cell-video"); if (c) c.textContent = CONFIG.video.duracion;
-      const t = $("#video-tag"); if (t) t.textContent = "Video · " + CONFIG.video.duracion;
-    }
+    if (!nombres.length) return;
+    const chip = $("#chip-integrantes");
+    if (chip) chip.innerHTML = nombres.map(n => "<b>" + n + "</b>").join(" · ");
+    const foot = $("#footer-integrantes");
+    if (foot) foot.innerHTML = "<b>Integrantes</b><br>" + nombres.join("<br>");
   })();
 
-  /* --- Imagenes ----------------------------------------------- */
+  /* ── Imágenes ─────────────────────────────────────────────── */
   (function imagenes() {
     $$("[data-img]").forEach(frame => {
       const url = (CONFIG.imagenes || {})[frame.dataset.img];
@@ -2082,30 +2048,80 @@ const CONFIG = {
     });
   })();
 
-  /* --- Video --------------------------------------------------- */
+  /* ── Video ────────────────────────────────────────────────── */
   (function video() {
-    const raw = ((CONFIG.video && CONFIG.video.url) || "").trim();
-    if (!raw) return;
-
-    let src = raw, m;
-    if ((m = raw.match(/[?&]v=([\w-]{6,})/)))                          src = "https://www.youtube.com/embed/" + m[1];
-    else if ((m = raw.match(/youtu\.be\/([\w-]{6,})/)))                src = "https://www.youtube.com/embed/" + m[1];
-    else if ((m = raw.match(/youtube\.com\/shorts\/([\w-]{6,})/)))     src = "https://www.youtube.com/embed/" + m[1];
-    else if ((m = raw.match(/drive\.google\.com\/file\/d\/([\w-]+)/))) src = "https://drive.google.com/file/d/" + m[1] + "/preview";
-
+    const cfg   = CONFIG.video || {};
     const frame = $("#video-frame");
+    const tabs  = $("#video-parts");
+    const tag   = $("#video-tag");
     if (!frame) return;
-    frame.innerHTML = "";
-    const f = document.createElement("iframe");
-    f.src = src;
-    f.title = "Video general del Eje Temático 1";
-    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-    f.allowFullscreen = true;
-    f.loading = "lazy";
-    frame.appendChild(f);
+
+    if (tag && cfg.duracion) tag.textContent = "Video · " + cfg.duracion;
+
+    const partes = (cfg.partes || []).filter(p => p && p.src);
+
+    /* Sin archivos propios: cae al enlace de YouTube o Drive */
+    if (!partes.length) {
+      const raw = (cfg.url || "").trim();
+      if (!raw) return;
+      let src = raw, m;
+      if ((m = raw.match(/[?&]v=([\w-]{6,})/)))                          src = "https://www.youtube.com/embed/" + m[1];
+      else if ((m = raw.match(/youtu\.be\/([\w-]{6,})/)))                src = "https://www.youtube.com/embed/" + m[1];
+      else if ((m = raw.match(/youtube\.com\/shorts\/([\w-]{6,})/)))     src = "https://www.youtube.com/embed/" + m[1];
+      else if ((m = raw.match(/drive\.google\.com\/file\/d\/([\w-]+)/))) src = "https://drive.google.com/file/d/" + m[1] + "/preview";
+
+      frame.innerHTML = "";
+      const f = document.createElement("iframe");
+      f.src = src;
+      f.title = "Video general del Eje Temático 1";
+      f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      f.allowFullscreen = true;
+      f.loading = "lazy";
+      frame.appendChild(f);
+      return;
+    }
+
+    /* Archivos propios: una parte, o varias con selector */
+    let botones = [];
+    const mostrar = (i, reproducir) => {
+      const p = partes[i];
+      frame.innerHTML = "";
+      const v = document.createElement("video");
+      v.src = p.src;
+      v.controls = true;
+      v.preload = "metadata";
+      v.setAttribute("playsinline", "");
+      v.title = p.titulo || ("Parte " + (i + 1));
+      frame.appendChild(v);
+      botones.forEach((b, k) => b.classList.toggle("active", k === i));
+      if (reproducir) v.play().catch(() => {});
+      /* Al terminar una parte, sigue con la próxima */
+      v.addEventListener("ended", () => { if (i + 1 < partes.length) mostrar(i + 1, true); });
+    };
+
+    if (partes.length > 1 && tabs) {
+      tabs.hidden = false;
+      botones = partes.map((p, i) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "vpart";
+        b.textContent = p.titulo || ("Parte " + (i + 1));
+        if (p.duracion) {
+          const d = document.createElement("span");
+          d.className = "d";
+          d.textContent = p.duracion;
+          b.appendChild(d);
+        }
+        b.addEventListener("click", () => mostrar(i, true));
+        tabs.appendChild(b);
+        return b;
+      });
+    }
+
+    mostrar(0, false);
   })();
 
-  /* --- Reproductor de podcast ---------------------------------- */
+  /* ── Reproductor de podcast ───────────────────────────────── */
   (function podcast() {
     const audio  = $("#audio");
     const player = $("#player");
@@ -2123,26 +2139,28 @@ const CONFIG = {
     if (cfg.titulo && name) name.textContent = cfg.titulo;
     if (cfg.duracion && tag) tag.textContent = "Audio · " + cfg.duracion;
 
-    /* Onda: 56 barras con alturas deterministas */
-    const BARS = 56;
+    /* Onda: 52 barras con alturas deterministas (siempre el mismo dibujo) */
+    const BARS = 52;
     const bars = [];
     for (let i = 0; i < BARS; i++) {
       const b = document.createElement("span");
-      const h = 20 + Math.abs(Math.sin(i * 0.62) * 46) + Math.abs(Math.cos(i * 1.9) * 28);
+      const h = 22 + Math.abs(Math.sin(i * 0.62) * 44) + Math.abs(Math.cos(i * 1.9) * 26);
       b.style.height = Math.min(100, h) + "%";
       wave.appendChild(b);
       bars.push(b);
     }
 
+    /* Sin audio: si hay ID de Drive, mostramos el reproductor de Drive */
     if (!cfg.src) {
       if (cfg.driveId) {
         const card = player.parentElement;
         player.remove();
         if (note) note.remove();
         const box = document.createElement("div");
-        box.style.cssText = "padding:16px;background:#2D3BFF";
+        box.style.cssText = "padding:14px 20px 20px";
         box.innerHTML = '<iframe src="https://drive.google.com/file/d/' + cfg.driveId +
-          '/preview" width="100%" height="70" style="border:0" title="Podcast introductorio" allow="autoplay"></iframe>';
+          '/preview" width="100%" height="70" style="border:0;border-radius:6px" ' +
+          'title="Podcast introductorio" allow="autoplay"></iframe>';
         card.appendChild(box);
       }
       return;
@@ -2156,7 +2174,8 @@ const CONFIG = {
 
     const fmt = s => {
       if (!isFinite(s) || s < 0) return "--:--";
-      const m = Math.floor(s / 60), r = Math.floor(s % 60);
+      const m = Math.floor(s / 60);
+      const r = Math.floor(s % 60);
       return m + ":" + String(r).padStart(2, "0");
     };
 
@@ -2179,21 +2198,23 @@ const CONFIG = {
     audio.addEventListener("pause", () => { player.classList.remove("is-playing"); btn.setAttribute("aria-label", "Reproducir podcast"); });
     audio.addEventListener("ended", () => { player.classList.remove("is-playing"); audio.currentTime = 0; paint(); });
     audio.addEventListener("error", () => {
-      btn.disabled = true; rate.disabled = true;
+      btn.disabled = true;
+      rate.disabled = true;
       wave.setAttribute("aria-disabled", "true");
       const p = document.createElement("p");
       p.className = "player-note";
-      p.textContent = "// no se pudo cargar el audio: revisá que la URL sea un enlace directo al archivo";
+      p.textContent = "// no se pudo cargar el audio — revisá que la URL sea un enlace directo al archivo";
       player.after(p);
     });
 
     btn.addEventListener("click", () => { audio.paused ? audio.play() : audio.pause(); });
 
-    wave.addEventListener("click", e => {
+    const seek = clientX => {
       const r = wave.getBoundingClientRect();
-      const p = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+      const p = Math.min(1, Math.max(0, (clientX - r.left) / r.width));
       if (isFinite(audio.duration)) { audio.currentTime = p * audio.duration; paint(); }
-    });
+    };
+    wave.addEventListener("click", e => seek(e.clientX));
     wave.addEventListener("keydown", e => {
       if (!isFinite(audio.duration)) return;
       if (e.key === "ArrowRight") { audio.currentTime = Math.min(audio.duration, audio.currentTime + 5); e.preventDefault(); }
@@ -2207,11 +2228,11 @@ const CONFIG = {
     rate.addEventListener("click", () => {
       ri = (ri + 1) % rates.length;
       audio.playbackRate = rates[ri];
-      rate.textContent = rates[ri].toString().replace(".", ",") + "×";
+      rate.textContent = rates[ri].toFixed(2).replace(/0$/, "").replace(/\.$/, ".0") + "×";
     });
   })();
 
-  /* --- Navegacion ---------------------------------------------- */
+  /* ── Navegación: scroll suave + sección activa ────────────── */
   (function nav() {
     const links = $$("#navlinks a");
     const map = new Map();
@@ -2222,8 +2243,8 @@ const CONFIG = {
       a.addEventListener("click", e => {
         if (!sec) return;
         e.preventDefault();
-        const bar = $("#navbar");
-        const off = bar ? bar.offsetHeight : 60;
+        const nav = $("#navbar");
+        const off = nav ? nav.offsetHeight + 12 : 70;
         const y = sec.getBoundingClientRect().top + window.pageYOffset - off;
         window.scrollTo({ top: y, behavior: reduceMotion ? "auto" : "smooth" });
         if (history.replaceState) history.replaceState(null, "", "#" + id);
@@ -2244,22 +2265,23 @@ const CONFIG = {
         a.classList.add("active");
         const box = a.parentElement;
         if (box.scrollWidth > box.clientWidth) {
-          box.scrollTo({ left: Math.max(0, a.offsetLeft - box.clientWidth / 2 + a.offsetWidth / 2), behavior: reduceMotion ? "auto" : "smooth" });
+          const target = a.offsetLeft - box.clientWidth / 2 + a.offsetWidth / 2;
+          box.scrollTo({ left: Math.max(0, target), behavior: reduceMotion ? "auto" : "smooth" });
         }
       }
-    }, { rootMargin: "-70px 0px -55% 0px", threshold: 0 });
+    }, { rootMargin: "-72px 0px -55% 0px", threshold: 0 });
     map.forEach((_, sec) => io.observe(sec));
   })();
 
-  /* --- Progreso y volver arriba -------------------------------- */
+  /* ── Progreso de lectura + botón "volver arriba" ──────────── */
   (function progreso() {
     const bar = $("#progress");
     const top = $("#to-top");
     let ticking = false;
     const update = () => {
       const h = document.documentElement.scrollHeight - window.innerHeight;
-      const p = h > 0 ? window.pageYOffset / h : 0;
-      if (bar) bar.style.transform = "scaleX(" + Math.min(1, Math.max(0, p)).toFixed(4) + ")";
+      const p = h > 0 ? (window.pageYOffset / h) * 100 : 0;
+      if (bar) bar.style.transform = "scaleX(" + (Math.min(100, Math.max(0, p)) / 100).toFixed(4) + ")";
       if (top) top.classList.toggle("show", window.pageYOffset > 700);
       ticking = false;
     };
@@ -2273,7 +2295,7 @@ const CONFIG = {
     update();
   })();
 
-  /* --- Revelado ------------------------------------------------ */
+  /* ── Revelado al hacer scroll ─────────────────────────────── */
   (function revelar() {
     const items = $$(".reveal");
     if (reduceMotion || !("IntersectionObserver" in window)) {
@@ -2283,50 +2305,35 @@ const CONFIG = {
     const io = new IntersectionObserver((entries, obs) => {
       entries.forEach((en, i) => {
         if (!en.isIntersecting) return;
-        en.target.style.transitionDelay = Math.min(i * 60, 180) + "ms";
+        en.target.style.transitionDelay = Math.min(i * 70, 210) + "ms";
         en.target.classList.add("in");
         obs.unobserve(en.target);
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
     items.forEach(el => io.observe(el));
   })();
 
-  /* ===============================================================
-     ESQUEMATICO EN VIVO
-     Nodos cuadrados, cableado en angulo recto, paquetes que viajan.
-     Cada tanto un nodo cae y la red sigue: eso es el tema de la
-     materia, no un adorno.
-     =============================================================== */
-  (function esquematico() {
+  /* ── Grafo de nodos de la portada ─────────────────────────────
+     No es decoración: muestra el concepto de la materia. Los nodos
+     intercambian mensajes, uno cae cada tanto y la red sigue. ── */
+  (function grafo() {
     const cv = $("#net");
-    const foot = $("#netstat");
     const out = $("#netstat-txt");
+    const stat = $("#netstat");
     if (!cv || !cv.getContext) return;
     const ctx = cv.getContext("2d");
 
-    /* Los colores salen de los tokens CSS, para que no haya dos paletas */
-    const cs = getComputedStyle(document.documentElement);
-    const tok = (n, fb) => (cs.getPropertyValue(n) || "").trim() || fb;
-    const INK   = tok("--ink",  "#EDEFF4");
-    const BLUE  = tok("--blue", "#2D3BFF");
-    const ACID  = tok("--acid", "#EBFF00");
-    const PAPER = tok("--bg",   "#0B0D12");
-    const SOFT  = tok("--rule-soft", "#232936");
-
-    /* Posiciones sobre una grilla, para que los cables queden rectos */
     const P = [
-      [0.07, 0.26], [0.19, 0.70], [0.31, 0.18], [0.43, 0.52],
-      [0.55, 0.14], [0.55, 0.84], [0.68, 0.44], [0.80, 0.74],
-      [0.88, 0.22], [0.95, 0.56]
+      [0.60, 0.18], [0.80, 0.30], [0.92, 0.56], [0.74, 0.72],
+      [0.55, 0.60], [0.68, 0.44], [0.86, 0.14], [0.46, 0.34],
+      [0.62, 0.86], [0.95, 0.80]
     ];
-    const E = [
-      [0,2],[2,4],[4,6],[6,8],[8,9],[9,7],[7,5],[5,3],[3,1],[1,0],
-      [3,6],[2,3],[4,9],[6,7],[0,3]
-    ];
+    const E = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[5,1],[5,3],[0,7],[7,4],[1,6],[6,2],[4,8],[8,3],[2,9],[9,3],[7,5]];
 
-    let W = 0, H = 0, dpr = 1, raf = 0, t = 0, downIdx = -1;
-    const nodes = P.map(p => ({ fx: p[0], fy: p[1], x: 0, y: 0, down: false, flash: 0 }));
+    let W = 0, H = 0, dpr = 1;
+    const nodes = P.map(p => ({ fx: p[0], fy: p[1], x: 0, y: 0, r: 3.2, down: false, pulse: Math.random() * Math.PI * 2 }));
     const packets = [];
+    let downIdx = -1, t = 0, raf = 0;
 
     function size() {
       const r = cv.getBoundingClientRect();
@@ -2335,116 +2342,90 @@ const CONFIG = {
       cv.width = Math.round(W * dpr);
       cv.height = Math.round(H * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const pad = 26;
-      nodes.forEach(n => {
-        n.x = Math.round(pad + n.fx * (W - pad * 2));
-        n.y = Math.round(pad + n.fy * (H - pad * 2));
-      });
+      nodes.forEach(n => { n.x = n.fx * W; n.y = n.fy * H; });
     }
 
-    /* Ruta en L: horizontal y despues vertical */
-    function route(a, b) { return [[a.x, a.y], [b.x, a.y], [b.x, b.y]]; }
-
-    function pointOn(path, p) {
-      const d1 = Math.abs(path[1][0] - path[0][0]);
-      const d2 = Math.abs(path[2][1] - path[1][1]);
-      const total = d1 + d2;
-      if (total === 0) return [path[0][0], path[0][1]];
-      const d = p * total;
-      if (d <= d1) {
-        const k = d1 === 0 ? 0 : d / d1;
-        return [path[0][0] + (path[1][0] - path[0][0]) * k, path[0][1]];
-      }
-      const k = d2 === 0 ? 0 : (d - d1) / d2;
-      return [path[1][0], path[1][1] + (path[2][1] - path[1][1]) * k];
+    function liveEdges() {
+      return E.filter(e => !nodes[e[0]].down && !nodes[e[1]].down);
     }
-
-    function liveEdges() { return E.filter(e => !nodes[e[0]].down && !nodes[e[1]].down); }
 
     function spawn() {
       const live = liveEdges();
-      if (!live.length || packets.length > 6) return;
+      if (!live.length || packets.length > 7) return;
       const e = live[(Math.random() * live.length) | 0];
-      packets.push({ a: e[0], b: e[1], p: 0, v: 0.006 + Math.random() * 0.006 });
+      packets.push({ a: e[0], b: e[1], p: 0, v: 0.004 + Math.random() * 0.005 });
     }
 
     function say(msg, down) {
       if (out) out.textContent = msg;
-      if (foot) foot.classList.toggle("is-down", !!down);
+      if (stat) stat.classList.toggle("is-down", !!down);
     }
 
     function draw() {
       ctx.clearRect(0, 0, W, H);
 
-      /* Grilla de fondo */
-      ctx.strokeStyle = SOFT;
-      ctx.lineWidth = 1;
-      const step = Math.max(28, Math.round(W / 24));
-      ctx.beginPath();
-      for (let x = step; x < W; x += step) { ctx.moveTo(x + 0.5, 0); ctx.lineTo(x + 0.5, H); }
-      ctx.stroke();
-
-      /* Cables */
+      /* Enlaces */
       E.forEach(e => {
         const a = nodes[e[0]], b = nodes[e[1]];
         const dead = a.down || b.down;
-        const path = route(a, b);
         ctx.beginPath();
-        ctx.moveTo(path[0][0], path[0][1]);
-        ctx.lineTo(path[1][0], path[1][1]);
-        ctx.lineTo(path[2][0], path[2][1]);
-        ctx.strokeStyle = dead ? SOFT : INK;
-        ctx.lineWidth = dead ? 1.5 : 1.6;
-        ctx.setLineDash(dead ? [4, 4] : []);
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = dead ? "rgba(255,180,84,0.16)" : "rgba(91,140,255,0.20)";
+        ctx.lineWidth = 1;
+        ctx.setLineDash(dead ? [3, 4] : []);
         ctx.stroke();
         ctx.setLineDash([]);
       });
 
-      /* Paquetes */
+      /* Mensajes en tránsito */
       for (let i = packets.length - 1; i >= 0; i--) {
         const pk = packets[i];
         const a = nodes[pk.a], b = nodes[pk.b];
         if (a.down || b.down) { packets.splice(i, 1); continue; }
         pk.p += pk.v;
-        if (pk.p >= 1) { b.flash = 1; packets.splice(i, 1); continue; }
-        const pt = pointOn(route(a, b), pk.p);
-        ctx.fillStyle = BLUE;
-        ctx.fillRect(Math.round(pt[0]) - 3, Math.round(pt[1]) - 3, 7, 7);
+        if (pk.p >= 1) { packets.splice(i, 1); continue; }
+        const x = a.x + (b.x - a.x) * pk.p;
+        const y = a.y + (b.y - a.y) * pk.p;
+        const fade = Math.sin(pk.p * Math.PI);
+        ctx.beginPath();
+        ctx.arc(x, y, 1.8, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(164,114,255," + (0.85 * fade).toFixed(3) + ")";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(x, y, 5.5, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(164,114,255," + (0.10 * fade).toFixed(3) + ")";
+        ctx.fill();
       }
 
       /* Nodos */
       nodes.forEach(n => {
-        if (n.down) {
-          ctx.fillStyle = PAPER;
-          ctx.fillRect(n.x - 7, n.y - 7, 14, 14);
-          ctx.strokeStyle = INK;
-          ctx.lineWidth = 2;
-          ctx.strokeRect(n.x - 7, n.y - 7, 14, 14);
-          ctx.beginPath();
-          ctx.moveTo(n.x - 4, n.y - 4); ctx.lineTo(n.x + 4, n.y + 4);
-          ctx.moveTo(n.x + 4, n.y - 4); ctx.lineTo(n.x - 4, n.y + 4);
-          ctx.stroke();
-        } else {
-          if (n.flash > 0) {
-            ctx.fillStyle = ACID;
-            ctx.fillRect(n.x - 9, n.y - 9, 18, 18);
-            n.flash -= 0.06;
-          }
-          ctx.fillStyle = INK;
-          ctx.fillRect(n.x - 6, n.y - 6, 12, 12);
-        }
+        n.pulse += 0.022;
+        const halo = n.down ? 5 : 7 + Math.sin(n.pulse) * 2.4;
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, halo, 0, Math.PI * 2);
+        ctx.fillStyle = n.down ? "rgba(255,180,84,0.09)" : "rgba(91,140,255,0.11)";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = n.down ? "#FFB454" : "#5B8CFF";
+        ctx.globalAlpha = n.down ? 0.55 : 1;
+        ctx.fill();
+        ctx.globalAlpha = 1;
       });
     }
 
+    /* Ciclo: la red trabaja, un nodo cae, la red sigue, el nodo vuelve */
     function cycle() {
       t++;
-      if (t % 20 === 0) spawn();
-      if (t === 280) {
-        downIdx = 2 + ((Math.random() * 7) | 0);
+      if (t % 22 === 0) spawn();
+
+      if (t === 260) {
+        downIdx = 2 + ((Math.random() * 6) | 0);
         nodes[downIdx].down = true;
-        say("nodo " + String(downIdx).padStart(2, "0") + " sin respuesta · la red sigue operando", true);
+        say("nodo " + String(downIdx).padStart(2, "0") + " sin respuesta — la red sigue operando", true);
       }
-      if (t === 660) {
+      if (t === 640) {
         if (downIdx >= 0) nodes[downIdx].down = false;
         downIdx = -1;
         say(nodes.length + " nodos activos · mensajes en tránsito · un solo sistema", false);
@@ -2459,7 +2440,7 @@ const CONFIG = {
 
     if (reduceMotion) {
       for (let i = 0; i < 4; i++) spawn();
-      packets.forEach((p, i) => (p.p = 0.3 + i * 0.14));
+      packets.forEach((p, i) => (p.p = 0.25 + i * 0.15));
       draw();
     } else {
       cycle();
@@ -2473,8 +2454,8 @@ const CONFIG = {
 
     document.addEventListener("visibilitychange", () => {
       if (reduceMotion) return;
-      cancelAnimationFrame(raf);
-      if (!document.hidden) raf = requestAnimationFrame(cycle);
+      if (document.hidden) { cancelAnimationFrame(raf); }
+      else { cancelAnimationFrame(raf); raf = requestAnimationFrame(cycle); }
     });
   })();
 
